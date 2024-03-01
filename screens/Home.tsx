@@ -13,6 +13,11 @@ const HomeScreen = () => {
         <Button
           title="Go to Services"
           onPress={() => navigation.navigate('Services')}
+          />
+        <Text>Home Screen</Text>
+        <Button
+          title="Go to Services"
+          onPress={() => navigation.navigate('Services')}
         />
       </Container>
     </View>
