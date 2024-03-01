@@ -1,10 +1,11 @@
-import { StyleSheet } from 'react-native';
+import { Montserrat } from './fonts'
+import { StyleSheet } from 'react-native'
 
 //put all stylings in here
-const styles = StyleSheet.create ({
+const styles = StyleSheet.create({
   container: {
     width: '100%',
-    padding: 24,
+    maxWidth: '80%',
   },
   webContainer: {
     width: '100%',
@@ -13,7 +14,21 @@ const styles = StyleSheet.create ({
     paddingRight: 86,
     paddingTop: 91,
     paddingBottom: 96,
-  }
-});
+  },
+  mainHomeView: {
+    flex: 1,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    backgroundColor: 'white',
+  },
+  heroImg: {
+    width: '100%',
+    maxHeight: 250,
+  },
+  heroTitle: {
+    fontFamily: Montserrat,
+    fontSize: 24,
+  },
+})
 
-export default styles;
+export default styles
