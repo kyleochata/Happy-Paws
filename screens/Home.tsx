@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text, Button } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
-
+import Hero from '../components/Hero'
 const HomeScreen = () => {
   const navigation = useNavigation<any>()
 
@@ -12,6 +12,7 @@ const HomeScreen = () => {
         title="Go to Services"
         onPress={() => navigation.navigate('Services')}
       />
+      <Hero />
     </View>
   )
 }
