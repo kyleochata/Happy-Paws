@@ -1,10 +1,14 @@
 import React from 'react'
 import { View } from 'react-native';
 
-const Container = () => {
+type ContainerProps = {
+  children: React.ReactNode;
+}
+
+const Container = ({ children }: ContainerProps) => {
   return (
     <View>
-      Container
+      {children}
     </View>
   );
 };
