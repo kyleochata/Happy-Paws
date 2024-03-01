@@ -10,12 +10,11 @@ const HomeScreen = () => {
   return (
     <View style={styles.mainHomeView}>
       <Container>
-        <Text>Home Screen</Text>
+        <Hero />
         <Button
           title="Go to Services"
           onPress={() => navigation.navigate('Services')}
         />
-        <Hero />
       </Container>
     </View>
   )

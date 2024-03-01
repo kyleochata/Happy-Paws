@@ -4,8 +4,8 @@ import { StyleSheet } from 'react-native'
 //put all stylings in here
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
     maxWidth: '80%',
+    width: '100%',
   },
   webContainer: {
     width: '100%',
@@ -20,10 +20,12 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'center',
     backgroundColor: 'white',
+    flexDirection: 'column',
   },
   heroImg: {
-    width: '100%',
-    maxHeight: 250,
+    maxWidth: '100%',
+    height: 300,
+    objectFit: 'contain',
   },
   heroTitle: {
     fontFamily: Montserrat,
