@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { View, Text, Image, Pressable, Platform, Modal, TouchableWithoutFeedback } from 'react-native';
 import { Link } from '@react-navigation/native';
-import styles from '../../utils/constants';
+import styles from './style';
 import Container from '../Container';
+import BookBtnLight from '../Buttons/BookNow/BookBtnLight';
 
 const Header = () => {
   const mobile = Platform.OS !== 'web';
@@ -37,9 +38,7 @@ const Header = () => {
                   <Link to='#' style={styles.modalMenuItem}>Home</Link>
                   <Link to='/services' style={styles.modalMenuItem}>Services</Link>
                   <Link to='#' style={styles.modalMenuItem}>Contact</Link>
-                  <Pressable style={styles.bookBtn}>
-                    <Text style={styles.bookBtnText}>Book</Text>
-                  </Pressable>
+                  <BookBtnLight value='Book' />
                 </View>
               </TouchableWithoutFeedback>
             </Modal>
@@ -49,9 +48,7 @@ const Header = () => {
             <Link to='#' style={styles.webHeaderMenuItem}>Home</Link>
             <Link to='/services' style={styles.webHeaderMenuItem}>Services</Link>
             <Link to='#' style={styles.webHeaderMenuItem}>Contact</Link>
-            <Pressable style={styles.bookBtn}>
-              <Text style={styles.bookBtnText}>Book</Text>
-            </Pressable>
+            <BookBtnLight value='Book' />
           </View>
         )}
       </View>

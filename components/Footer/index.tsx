@@ -1,5 +1,5 @@
 import { View, Text, Image, Platform } from 'react-native';
-import styles from '../../utils/constants';
+import styles from './style';
 
 const Footer = () => {
   const mobile = Platform.OS !== 'web';

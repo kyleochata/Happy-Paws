@@ -1,5 +1,5 @@
 import { Platform, View, ScrollView } from 'react-native'
-import styles from '../../utils/constants'
+import styles from './style'
 
 type ContainerProps = {
   children: React.ReactNode
@@ -8,7 +8,7 @@ type ContainerProps = {
 const Container = ({ children }: ContainerProps) => {
   return (
     <View
-      style={Platform.OS === 'web' ? styles.webContainer : styles.mobileContainer}
+      style={Platform.OS === 'web' ? styles.webContainer : styles.container}
     >
       {children}
     </View>

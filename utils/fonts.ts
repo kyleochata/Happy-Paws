@@ -5,9 +5,7 @@ import * as Font from 'expo-font'
 
 // Define the font family names
 export const Montserrat = 'Montserrat'
-export const MontserratBold = 'MontserratBold'
 export const FiraSans = 'FiraSans'
-export const FiraSansBold = 'FiraSansBold'
 
 // Load custom fonts asynchronously
 export const useFontLoading = () => {
@@ -21,8 +19,8 @@ export const useFontLoading = () => {
         'Montserrat-Medium': require('../assets/fonts/Montserrat/static/Montserrat-Medium.ttf'),
         'Montserrat-SemiBold': require('../assets/fonts/Montserrat/static/Montserrat-SemiBold.ttf'),
         [FiraSans]: require('../assets/fonts/FiraSans/FiraSans-Regular.ttf'),
-        [MontserratBold]: require('../assets/fonts/Montserrat/static/Montserrat-Bold.ttf'),
-        [FiraSansBold]: require('../assets/fonts/FiraSans/static/FiraSans-Bold.ttf'),
+        'FiraSans-Bold': require('../assets/fonts/FiraSans/FiraSans-Bold.ttf'),
+        'FiraSans-Medium': require('../assets/fonts/FiraSans/FiraSans-Medium.ttf'),
       })
       setFontsLoaded(true)
     }
