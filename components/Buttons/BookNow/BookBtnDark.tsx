@@ -1,8 +1,13 @@
-import { View, Text } from 'react-native'
-const BookBtnDark = () => {
+import { View, Text } from 'react-native';
+
+type BookBtnDarkProps = {
+  value: string;
+}
+
+const BookBtnDark = ({ value }: BookBtnDarkProps) => {
   return (
     <View>
-      <Text>BookBtnDark</Text>
+      <Text>{value}</Text>
     </View>
   )
 }
