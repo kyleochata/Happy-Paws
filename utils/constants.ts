@@ -128,6 +128,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'green',
     flexDirection: 'column',
+
+    // flexGrow: 1,
   },
   mobileHeroImg: {
     width: '100%',
