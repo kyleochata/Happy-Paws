@@ -19,11 +19,12 @@ const styles = StyleSheet.create({
     width: '100%',
     justifyContent: 'flex-start',
     alignItems: 'center',
+    flexDirection: 'column',
     backgroundColor: colors.white,
   },
 })
 
-export default styles;
+export default styles
 
 export const buttonStyles = StyleSheet.create({
   bookBtnLight: {
