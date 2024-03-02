@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Platform, View, Text, TextInput, Image } from 'react-native';
 import styles from './style';
+import BookBtnDark from '../Buttons/BookNow/BookBtnDark';
 
 const Contact = () => {
   const mobile = Platform.OS !== 'web';
@@ -42,9 +43,11 @@ const Contact = () => {
             value={text}
           />
 
-
-
+          <View style={styles.submitBtn}>
+            <BookBtnDark value='Submit' />
+          </View>
         </View>
+        
         
         <Image
           source={require('../../assets/images/contact-pets.jpg')}

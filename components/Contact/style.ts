@@ -119,10 +119,17 @@ const styles = StyleSheet.create({
   },
   webContactForm: {
     width: '100%',
-    maxWidth: 600,
+    maxWidth: 500,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
+  },
+  submitBtn: {
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 33,
   },
   webContactImg: {
     width: '100%',
