@@ -7,6 +7,7 @@ import Header from '../components/Header'
 import Hero from '../components/Hero/Hero'
 import Footer from '../components/Footer'
 import styles from '../utils/constants'
+import ValueBanner from '../components/Banner/ValuesBanner'
 
 const HomeScreen = () => {
   const navigation = useNavigation<any>()
@@ -22,6 +23,7 @@ const HomeScreen = () => {
       <Container>
         <Hero />
       </Container>
+      <ValueBanner />
       <Footer />
     </ScrollView>
   )

@@ -11,16 +11,11 @@ export const colors = {
 //put all stylings in here
 const styles = StyleSheet.create({
   container: {
-    maxWidth: 1280,
     width: '95%',
   },
   webContainer: {
     width: '100%',
     maxWidth: 1280,
-    paddingLeft: 86,
-    paddingRight: 86,
-    paddingTop: 20,
-    paddingBottom: 20,
   },
   mobileHeaderWrapper: {
     width: '100%',
