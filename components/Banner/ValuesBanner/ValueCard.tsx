@@ -13,7 +13,9 @@ const ValueCard = ({ title, description, image }: ValueCardProps) => {
         <Image source={image} style={styles.vCI} />
       </View>
       <Text style={styles.vCTitle}>{title}</Text>
-      <Text style={styles.vCText}>{description}</Text>
+      <Text style={Platform.OS === 'web' ? styles.vCText : styles.mVCText}>
+        {description}
+      </Text>
     </View>
   )
 }

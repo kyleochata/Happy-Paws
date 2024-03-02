@@ -1,4 +1,4 @@
-import { View, Text, Platform } from 'react-native'
+import { View, Platform } from 'react-native'
 import ValueCard from './ValueCard'
 import styles from './style'
 import Container from '../../Container'

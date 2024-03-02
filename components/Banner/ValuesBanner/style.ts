@@ -56,6 +56,13 @@ const ValueBannerStyles = StyleSheet.create({
     textAlign: 'center',
     minHeight: 155,
   },
+  mVCText: {
+    color: colors.white,
+    fontFamily: FiraSans,
+    fontSize: 18,
+    fontWeight: '500',
+    textAlign: 'center',
+  },
   vCTitle: {
     color: colors.darkPurple,
     fontFamily: 'Montserrat-Bold',

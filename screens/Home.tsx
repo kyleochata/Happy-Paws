@@ -1,16 +1,16 @@
-// export default HomeScreen
 import React from 'react'
-import { ScrollView, Platform, View } from 'react-native'
+import { ScrollView, Platform } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import Container from '../components/Container'
 import Header from '../components/Header'
 import Hero from '../components/Hero/Hero'
+import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import styles from '../utils/constants'
-import ValueBanner from '../components/Banner/ValuesBanner'
+import ValueBanner from '../components/Banner/ValuesBanner/index'
 
 const HomeScreen = () => {
-  const navigation = useNavigation<any>()
+  //const navigation = useNavigation<any>()
 
   return (
     <ScrollView
@@ -24,6 +24,9 @@ const HomeScreen = () => {
         <Hero />
       </Container>
       <ValueBanner />
+      <Container>
+        <Contact />
+      </Container>
       <Footer />
     </ScrollView>
   )

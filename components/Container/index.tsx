@@ -1,5 +1,5 @@
 import { Platform, View, ScrollView } from 'react-native'
-import styles from '../../utils/constants'
+import styles from './style'
 
 type ContainerProps = {
   children: React.ReactNode

@@ -1,6 +1,5 @@
-import { View, Text, Image, Platform } from 'react-native'
-import styles from '../../utils/constants'
-import Container from '../Container'
+import { View, Text, Image, Platform } from 'react-native';
+import styles from './style';
 
 const Footer = () => {
   const mobile = Platform.OS !== 'web'
@@ -30,7 +29,7 @@ const Footer = () => {
         Privacy | Terms | Legal | Cookie Preferences
       </Text>
     </View>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
