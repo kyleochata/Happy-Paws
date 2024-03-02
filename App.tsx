@@ -1,31 +1,20 @@
-import { useEffect } from 'react'
-import { NavigationContainer } from '@react-navigation/native'
-import { SafeAreaView, Platform } from 'react-native'
-import { useFontLoading } from './utils/fonts' // Import the custom font loading hook
-import AppNavigator from './navigation/AppNavigator'
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
 
-const App = () => {
-  const fontsLoaded = useFontLoading() // Use the custom font loading hook
-
-  if (!fontsLoaded) {
-    return null // Render nothing until fonts are loaded
-  }
-  const changeBodyFlow = () => {
-    if (Platform.OS === 'web') {
-      document.body.style.overflow = 'auto'
-    } else {
-      return
-    }
-  }
-  changeBodyFlow()
-
+export default function App() {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <NavigationContainer>
-        <AppNavigator />
-      </NavigationContainer>
-    </SafeAreaView>
-  )
+    <View style={styles.container}>
+      <Text>Open up App.tsx to start working on your app!</Text>
+      <StatusBar style="auto" />
+    </View>
+  );
 }
 
-export default App
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
