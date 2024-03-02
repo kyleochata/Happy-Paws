@@ -6,7 +6,7 @@ import BookBtnDark from '../Buttons/BookNow/BookBtnDark';
 const Contact = () => {
   const mobile = Platform.OS !== 'web';
   // WILL GO BACK TO FIX CONTACT FORM
-  const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
+  const [formData, setFormData] = useState<any>({ name: '', email: '', phone: '', message: '' });
   const { name, email, phone, message } = formData;
 
   return (
