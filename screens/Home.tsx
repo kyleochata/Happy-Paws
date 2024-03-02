@@ -27,7 +27,9 @@
 import { ScrollView, Platform } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import Container from '../components/Container'
+import Header from '../components/Header'
 import Hero from '../components/Hero/Hero'
+import Footer from '../components/Footer'
 import styles from '../utils/constants'
 
 const HomeScreen = () => {
@@ -39,9 +41,11 @@ const HomeScreen = () => {
         Platform.OS === 'web' ? styles.webHomeView : styles.mobileHomeView
       }
     >
+      <Header />
       <Container>
         <Hero />
       </Container>
+      <Footer />
     </ScrollView>
   )
 }
