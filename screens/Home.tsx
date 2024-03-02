@@ -7,9 +7,10 @@ import Hero from '../components/Hero/Hero'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import styles from '../utils/constants'
+import ValueBanner from '../components/Banner/ValuesBanner/index'
 
 const HomeScreen = () => {
-  const navigation = useNavigation<any>()
+  //const navigation = useNavigation<any>()
 
   return (
     <ScrollView
@@ -21,6 +22,9 @@ const HomeScreen = () => {
       <Header />
       <Container>
         <Hero />
+      </Container>
+      <ValueBanner />
+      <Container>
         <Contact />
       </Container>
       <Footer />
