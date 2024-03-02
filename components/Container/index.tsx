@@ -1,4 +1,3 @@
-import React from 'react'
 import { Platform, View, ScrollView } from 'react-native'
 import styles from '../../utils/constants'
 
@@ -9,11 +8,11 @@ type ContainerProps = {
 const Container = ({ children }: ContainerProps) => {
   return (
     <View
-      style={[styles.container, Platform.OS === 'web' && styles.webContainer]}
+      style={Platform.OS === 'web' ? styles.webContainer : styles.mobileContainer}
     >
       {children}
     </View>
   )
 }
 
-export default Container
+export default Container;
