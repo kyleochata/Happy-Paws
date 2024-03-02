@@ -6,9 +6,9 @@ import Container from '../Container';
 import BookBtnLight from '../Buttons/BookNow/BookBtnLight';
 
 const Header = () => {
-  const mobile = Platform.OS !== 'web';
-  const [modalVisible, setModalVisible] = useState<boolean>(false);
-  const toggle = () => setModalVisible(!modalVisible);
+  const mobile = Platform.OS !== 'web'
+  const [modalVisible, setModalVisible] = useState<boolean>(false)
+  const toggle = () => setModalVisible(!modalVisible)
 
   return (
     <Container>
@@ -56,4 +56,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Header

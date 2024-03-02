@@ -19,8 +19,6 @@ const styles = StyleSheet.create({
     width: '100%',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    backgroundColor: colors.white,
-    flexDirection: 'column',
   },
 })
 
