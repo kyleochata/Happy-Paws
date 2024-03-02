@@ -116,24 +116,19 @@ const styles = StyleSheet.create({
     fontFamily: Montserrat,
     fontSize: 30,
   },
+  mainHomeView: {
+    // flex: 1,
+    // justifyContent: 'flex-start',
+    // alignItems: 'center',
   mobileHomeView: {
     justifyContent: 'flex-start',
     alignItems: 'center',
     backgroundColor: 'white',
     flexDirection: 'column',
   },
-  webHomeView: {
-    width: '100%',
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    backgroundColor: 'green',
-    flexDirection: 'column',
-
-    // flexGrow: 1,
-  },
-  mobileHeroImg: {
-    width: '100%',
-    height: 275,
+  heroImg: {
+    maxWidth: '100%',
+    height: 300,
     objectFit: 'contain',
   },
   webHeroImg: {
@@ -145,6 +140,95 @@ const styles = StyleSheet.create({
   heroTitle: {
     fontFamily: Montserrat,
     fontSize: 24,
+  },
+  mobileContactWrapper: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+  },
+  webContactWrapper: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+  },
+  mobileContactH1: {
+    color: '#522689',
+    fontSize: 40,
+    fontFamily: MontserratBold,
+    textAlign: 'center',
+  },
+  webContactH1: {
+    color: '#522689',
+    fontSize: 24,
+    fontFamily: MontserratBold,
+  },
+  mobileContactH2: {
+    color: '#522689',
+    fontSize: 22,
+    fontFamily: Montserrat,
+    textAlign: 'center'
+  },
+  webContactH2: {
+    color: '#522689',
+    fontSize: 36,
+    fontFamily: Montserrat,
+  },
+  mobileContactFormWrap: {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+  },
+  webContactFormWrap: {
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderStyle: 'solid',
+    borderWidth: 2,
+    borderRadius: 10,
+    borderColor: '#522689',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 2,
+      height: 1.5,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+    paddingTop: 33,
+    paddingBottom: 33,
+    paddingLeft: 23,
+  },
+  mobileContactForm: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+  },
+  webContactForm: {
+    width: 300,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+  },
+  contactFormLabel: {
+    color: '#000',
+    fontFamily: Montserrat,
+    fontSize: 30,
+  },
+  contactInput: {
+    backgroundColor: '#D6CDE2',
+    borderRadius: 10,
+  },
+  mobileContactImg: {
+    width: 360,
+    height: 330,
+  },
+  webContactImg: {
+    width: 300,
+    height: 200,
   },
   mobileFooterWrapper: {
     width: '100%',
