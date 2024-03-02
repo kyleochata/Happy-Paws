@@ -4,7 +4,7 @@ import { buttonStyles as styles } from '../../../utils/constants';
 
 type BookBtnDarkProps = {
   value: string;
-}
+};
 
 const BookBtnDark = ({ value }: BookBtnDarkProps) => {
   const navigation = useNavigation<any>();
@@ -18,6 +18,7 @@ const BookBtnDark = ({ value }: BookBtnDarkProps) => {
     >
       <Text style={styles.bookBtnLTxt}>{value}</Text>
     </TouchableOpacity>
-  )
-}
-export default BookBtnDark
+  );
+};
+
+export default BookBtnDark;
