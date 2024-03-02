@@ -1,4 +1,4 @@
-import { Montserrat } from './fonts'
+import { Montserrat, MontserratBold, FiraSans } from './fonts'
 import { StyleSheet } from 'react-native'
 
 //put all stylings in here
@@ -26,8 +26,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingRight: 15,
+    paddingTop: 20,
+    paddingLeft: 30,
     paddingBottom: 20,
+    paddingRight: 15,
   },
   webHeaderWrapper: {
     width: '100%',
@@ -42,12 +44,12 @@ const styles = StyleSheet.create({
     paddingTop: 20,
   },
   mobileLogoImg: {
-    width: 199,
-    height: 100
+    width: 200,
+    height: 78
   },
   webLogoImg: {
-    width: 339,
-    height: 140
+    width: 320,
+    height: 124
   },
   webHeaderMenu: {
     display: 'flex',
@@ -73,9 +75,8 @@ const styles = StyleSheet.create({
   },
   modalMenuItem: {
     color: '#fff',
-    fontFamily: Montserrat,
+    fontFamily: MontserratBold,
     fontSize: 40,
-    fontWeight: '700',
   },
   modalMenuBtn: {
     justifyContent: 'center',
@@ -85,9 +86,8 @@ const styles = StyleSheet.create({
   },
   modalMenuBtnText: {
     color: '#A189C8',
-    fontFamily: Montserrat,
+    fontFamily: MontserratBold,
     fontSize: 40,
-    fontWeight: 'bold',
   },
   bookBtn: {
     width: 120,
@@ -127,6 +127,77 @@ const styles = StyleSheet.create({
   heroTitle: {
     fontFamily: Montserrat,
     fontSize: 24,
+  },
+  mobileFooterWrapper: {
+    width: '100%',
+    backgroundColor: '#A189C8',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 20,
+    paddingLeft: 15,
+    paddingRight: 15,
+    paddingBottom: 20,
+  },
+  webFooterWrapper: {
+    width: '100%',
+    backgroundColor: '#A189C8',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingLeft: 86,
+    paddingRight: 86,
+    paddingTop: 86,
+    paddingBottom: 50,
+  },
+  mobileFooterLogoImg: {
+    marginBottom: 20,
+    width: 184,
+    height: 70,
+  },
+  webFooterLogoImg: {
+    width: 320,
+    height: 125,
+    position: 'absolute',
+    bottom: 120,
+    left: 50,
+  },
+  mobileFooterTopLinks: {
+    color: '#fff',
+    fontFamily: FiraSans,
+    fontSize: 22,
+  },
+  webFooterTopLinks: {
+    color: '#fff',
+    fontFamily: FiraSans,
+    fontSize: 28,
+  },
+  mobileFooterText: {
+    paddingTop: 18,
+    color: '#fff',
+    fontFamily: FiraSans,
+    fontSize: 14,
+    textAlign: 'center',
+  },
+  webFooterText: {
+    paddingTop: 50,
+    fontFamily: FiraSans,
+    color: '#fff',
+    fontSize: 18,
+  },
+  mobileFooterBottomLinks: {
+    paddingTop: 18,
+    fontFamily: FiraSans,
+    color: '#fff',
+    fontSize: 14,
+  },
+  webFooterBottomLinks: {
+    paddingTop: 20,
+        fontFamily: FiraSans,
+    color: '#fff',
+    fontSize: 18,
   },
 })
 

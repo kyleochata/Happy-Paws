@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native'
 import Container from '../components/Container'
 import Header from '../components/Header'
 import Hero from '../components/Hero/Hero'
+import Footer from '../components/Footer'
 import styles from '../utils/constants'
 
 const HomeScreen = () => {
@@ -19,6 +20,7 @@ const HomeScreen = () => {
           onPress={() => navigation.navigate('Services')}
         />
       </Container>
+      <Footer />
     </View>
   )
 }
