@@ -8,11 +8,13 @@ type ContainerProps = {
 const Container = ({ children }: ContainerProps) => {
   return (
     <View
-      style={Platform.OS === 'web' ? styles.webContainer : styles.mobileContainer}
+      style={
+        styles.container && (Platform.OS === 'web' ? styles.webContainer : '')
+      }
     >
       {children}
     </View>
   )
 }
 
-export default Container;
+export default Container

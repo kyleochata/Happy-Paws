@@ -12,11 +12,11 @@ export const colors = {
 const styles = StyleSheet.create({
   container: {
     maxWidth: 1280,
-    width: '100%',
+    width: '95%',
   },
   webContainer: {
     width: '100%',
-    maxWidth: '95%',
+    maxWidth: 1280,
     paddingLeft: 86,
     paddingRight: 86,
     paddingTop: 20,
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   },
   mobileHeaderWrapper: {
     width: '100%',
-    backgroundColor: '#fff',
+    backgroundColor: colors.white,
     display: 'flex',
     flexWrap: 'nowrap',
     flexDirection: 'row',
@@ -48,12 +48,17 @@ const styles = StyleSheet.create({
     paddingTop: 20,
   },
   mobileLogoImg: {
-    width: 200,
-    height: 78,
+    width: 150,
+    height: 60,
+    margin: 0,
+    objectFit: 'contain',
   },
   webLogoImg: {
-    width: 320,
-    height: 124,
+    width: '20%',
+    minWidth: 150,
+    height: 100,
+    margin: 0,
+    resizeMode: 'contain',
   },
   webHeaderMenu: {
     display: 'flex',
@@ -133,8 +138,9 @@ const styles = StyleSheet.create({
   },
   mobileHeroImg: {
     width: '100%',
-    height: 275,
+    height: 200,
     objectFit: 'contain',
+    margin: 0,
   },
   webHeroImg: {
     width: '100%',
@@ -266,14 +272,14 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   mobileHeroText: {
-    fontFamily: 'Fira Sans',
+    fontFamily: FiraSans,
     fontSize: 24,
     lineHeight: 26,
     marginBottom: 10,
     marginTop: 15,
   },
   webHeroText: {
-    fontFamily: 'Fira Sans',
+    fontFamily: FiraSans,
     fontSize: 24,
     lineHeight: 30,
     marginBottom: 10,
