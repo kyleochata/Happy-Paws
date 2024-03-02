@@ -8,9 +8,7 @@ type ContainerProps = {
 const Container = ({ children }: ContainerProps) => {
   return (
     <View
-      style={
-        styles.container && (Platform.OS === 'web' ? styles.webContainer : '')
-      }
+      style={Platform.OS === 'web' ? styles.webContainer : styles.container}
     >
       {children}
     </View>
