@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native'
 import Container from '../components/Container'
 import Header from '../components/Header'
 import Hero from '../components/Hero/Hero'
+import PhotoGallery from '../components/PhotoGallery'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import styles from '../utils/constants'
@@ -25,6 +26,7 @@ const HomeScreen = () => {
       </Container>
       <ValueBanner />
       <Container>
+        <PhotoGallery />
         <Contact />
       </Container>
       <Footer />
