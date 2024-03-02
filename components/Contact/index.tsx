@@ -53,6 +53,7 @@ const Contact = () => {
           </View>
         </View>
         
+        
         <Image
           source={require('../../assets/images/contact-pets.jpg')}
           style={mobile ? styles.mobileContactImg : styles.webContactImg}
