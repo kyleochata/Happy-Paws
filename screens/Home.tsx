@@ -10,6 +10,7 @@ import Footer from '../components/Footer'
 import styles from '../utils/constants'
 import ValueBanner from '../components/Banner/ValuesBanner/index'
 import About from '../components/About'
+import HServices from '../components/HServices'
 
 const HomeScreen = () => {
   //const navigation = useNavigation<any>()
@@ -28,6 +29,7 @@ const HomeScreen = () => {
       <ValueBanner />
       <Container>
         <About />
+        <HServices />
         <PhotoGallery />
         <Contact />
       </Container>
