@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
   },
 
   webCarouselContainer: {
+    overflow: 'hidden',
     width: '100%',
     maxWidth: 1090,
     marginTop: 40,
