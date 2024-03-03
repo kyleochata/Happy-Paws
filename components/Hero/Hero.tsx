@@ -1,6 +1,6 @@
-import { Text, Image, Platform, View } from 'react-native';
-import styles from './style';
-import BookBtnLight from '../Buttons/BookNow/BookBtnLight';
+import { Text, Image, Platform, View } from 'react-native'
+import styles from './style'
+import BookBtnLight from '../Buttons/BookNow/BookBtnLight'
 
 const Hero = () => {
   return (
@@ -26,7 +26,7 @@ const Hero = () => {
             </Text>
             <Text style={styles.webHeroSubTitle}>Making Tails Wag </Text>
             <Text style={styles.webHeroSubTitle2}>{`&`} Hearts Happy</Text>
-            <BookBtnLight value='Book now' />
+            <BookBtnLight value="Book now" />
           </View>
         </>
       ) : (
@@ -45,11 +45,11 @@ const Hero = () => {
           </Text>
           <Text style={styles.mobileHeroSubTitle}>Making Tails Wag </Text>
           <Text style={styles.mobileHeroSubTitle2}>{`&`} Hearts Happy</Text>
-          <BookBtnLight value='Book now' />
+          <BookBtnLight value="Book now" />
         </>
       )}
     </View>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero
