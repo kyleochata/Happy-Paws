@@ -62,18 +62,32 @@ const styles = StyleSheet.create({
     paddingTop: 15,
     paddingBottom: 15,
   },
+  mobRadioBtnForm: {
+    width: '100%',
+    maxWidth: 500,
+  },
+  mobRadioBtnFormWrap: {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    gap: 20,
+  },
+  mobServices: {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: 15,
+  },
   mobSubmitBtn: {
     width: '100%',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     paddingTop: 25,
-  },
-  mobImg: {
-    marginTop: 40,
-    width: '100%',
-    height: 288,
-    resizeMode: 'contain',
   },
 
   webWrapper: {
@@ -88,6 +102,11 @@ const styles = StyleSheet.create({
     backgroundColor: colors.lightPurple,
   },
   webH1: {
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexGrow: 2,
     marginTop: 33,
     marginBottom: 33,
     color: colors.darkPurple,
@@ -96,8 +115,8 @@ const styles = StyleSheet.create({
   },
   webH2: {
     color: colors.black,
-    fontSize: 36,
-    fontFamily: 'Montserrat-Medium',
+    fontSize: 30,
+    fontFamily: 'Montserrat-SemiBold',
   },
   webFormWrap: {
     width: '100%',
@@ -105,8 +124,9 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexWrap: 'wrap',
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'space-evenly',
     alignItems: 'center',
+    gap: 40,
     borderStyle: 'solid',
     borderWidth: 2,
     borderRadius: 10,
@@ -160,18 +180,34 @@ const styles = StyleSheet.create({
     paddingTop: 15,
     paddingBottom: 15,
   },
+  webRadioBtnForm: {
+    width: '100%',
+    maxWidth: 500,
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  webRadioBtnFormWrap: {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    gap: 30,
+  },
+  webServices: {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 15,
+    paddingLeft: 30,
+    paddingRight: 30,
+  },
   webSubmitBtn: {
     width: '100%',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     paddingTop: 33,
-  },
-  webImg: {
-    width: '100%',
-    maxWidth: 650,
-    height: 500,
-    resizeMode: 'contain',
   },
 });
 

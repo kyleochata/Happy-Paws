@@ -4,6 +4,8 @@ import Container from '../Container';
 import BtnDark from '../Buttons/BtnDark';
 import styles from './style';
 import RadioButton, { RadioOption } from '../Buttons/RadioButton/RadioButton';
+import Divider from '../Divider';
+import { colors } from '../../utils/constants';
 
 const BookAService = () => {
   const mobile = Platform.OS !== 'web';
@@ -13,9 +15,33 @@ const BookAService = () => {
 
   // RADIO BUTTON
   const [selectedValue, setSelectedValue] = useState('cat');
-  const options: RadioOption[] = [
+  const petType: RadioOption[] = [
     { label: 'Cat', value: 'cat' },
     { label: 'Dog', value: 'dog' },
+  ];
+
+  const boardingOptions: RadioOption[] = [
+    { label: 'Standard', value: 'standardBoarding' },
+    { label: 'Deluxe', value: 'deluxeBoarding' },
+    { label: 'Luxury', value: 'luxuryBoarding' },
+  ];
+
+  const daycareOptions: RadioOption[] = [
+    { label: 'Basic', value: 'basicDaycare' },
+    { label: 'Standard', value: 'standardDaycare' },
+    { label: 'Premium', value: 'premiumDaycare' },
+  ];
+
+  const groomingOptions: RadioOption[] = [
+    { label: 'Basic', value: 'basicGrooming' },
+    { label: 'Standard', value: 'standardGrooming' },
+    { label: 'Premium', value: 'premiumGrooming' },
+  ];
+
+  const trainingOptions: RadioOption[] = [
+    { label: 'Basic', value: 'basicTraining' },
+    { label: 'Standard', value: 'standardTraining' },
+    { label: 'Premium', value: 'premiumTraining' },
   ];
 
   return (
@@ -25,6 +51,7 @@ const BookAService = () => {
         <View style={mobile ? styles.mobFormWrap : styles.webFormWrap}>
           <Text style={mobile ? styles.mobH1 : styles.webH1}>Book a Service</Text>
 
+          {/* USER FORM */}
           <View style={mobile ? styles.mobForm : styles.webForm}>
             <Text style={mobile ? styles.mobFormLabel : styles.webFormLabel}>Name</Text>
             <TextInput
@@ -54,20 +81,60 @@ const BookAService = () => {
               numberOfLines={4}
               value={message}
             />
+          </View>
 
+          <View style={mobile ? styles.mobRadioBtnForm : styles.webRadioBtnForm}>
             {/* RADIO BUTTONS SECTION HERE */}
-            <RadioButton
-              options={options}
-              selectedOption={selectedValue}
-              onSelect={value => setSelectedValue(value)}
-            />
+            <View style={mobile ? styles.mobRadioBtnFormWrap : styles.webRadioBtnFormWrap}>
+              <Text style={mobile ? styles.mobFormLabel : styles.webFormLabel}>Pet:</Text>
+              <RadioButton
+                options={petType}
+                selectedOption={selectedValue}
+                onSelect={value => setSelectedValue(value)}
+              />
+            </View>
 
-            <View style={mobile ? styles.mobSubmitBtn : styles.webSubmitBtn}>
-              <BtnDark value='Submit' />
+          <Text style={mobile ? styles.mobFormLabel  : styles.webFormLabel }>Services:</Text>
+            <View style={mobile ? styles.mobServices : styles.webServices}>
+              <Text style={mobile ? styles.mobH2 : styles.webH2}>Overnight Boarding</Text>
+              <RadioButton
+                options={boardingOptions}
+                selectedOption={selectedValue}
+                onSelect={value => setSelectedValue(value)}
+              />
+              <Divider />
+
+              <Text style={mobile ? styles.mobH2 : styles.webH2}>Daycare</Text>
+              <RadioButton
+                options={daycareOptions}
+                selectedOption={selectedValue}
+                onSelect={value => setSelectedValue(value)}
+              />
+              <Divider />
+
+              <Text style={mobile ? styles.mobH2 : styles.webH2}>Grooming</Text>
+              <RadioButton
+                options={groomingOptions}
+                selectedOption={selectedValue}
+                onSelect={value => setSelectedValue(value)}
+              />
+              <Divider />
+              
+              {/* IF CAT IS SELECTED, HIDE TRAINING SECTION */}
+              <Text style={mobile ? styles.mobH2 : styles.webH2}>Training</Text>
+              <RadioButton
+                options={trainingOptions}
+                selectedOption={selectedValue}
+                onSelect={value => setSelectedValue(value)}
+                />
             </View>
           </View>
-          
-        </View>
+
+          {/* SUBMIT BUTTON */}
+          <View style={mobile ? styles.mobSubmitBtn : styles.webSubmitBtn}>
+            <BtnDark value='Submit' />
+          </View>
+        </View>      
       </Container>
     </View>
   );

@@ -11,6 +11,7 @@ import styles from '../utils/constants'
 import ValueBanner from '../components/Banner/ValuesBanner/index'
 import About from '../components/About'
 import HServices from '../components/HServices'
+import BookAService from '../components/BookAService'
 
 const HomeScreen = () => {
   //const navigation = useNavigation<any>()
@@ -23,6 +24,7 @@ const HomeScreen = () => {
       scrollEnabled={true}
     >
       <Header />
+      <BookAService />
       <Container>
         <Hero />
       </Container>

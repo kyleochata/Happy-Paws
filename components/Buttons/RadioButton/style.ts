@@ -3,8 +3,9 @@ import { colors } from '../../../utils/constants';
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'column',
+    flexDirection: 'row',
     alignItems: 'flex-start',
+    gap: 15,
   },
   radioButton: {
     flexDirection: 'row',
@@ -32,7 +33,7 @@ const styles = StyleSheet.create({
   },
   radioLabel: {
     fontFamily: 'Montserrat-Medium',
-    fontSize: 22,
+    fontSize: 26,
     color: colors.black,
   },
 });
