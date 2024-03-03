@@ -67,6 +67,7 @@ const styles = StyleSheet.create({
     paddingRight: 15,
     paddingTop: 15,
     paddingBottom: 15,
+    verticalAlign: 'top',
   },
   mobileSubmitBtn: {
     width: '100%',
@@ -166,6 +167,7 @@ const styles = StyleSheet.create({
     paddingRight: 15,
     paddingTop: 15,
     paddingBottom: 15,
+    verticalAlign: 'top',
   },
   webSubmitBtn: {
     width: '100%',

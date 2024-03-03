@@ -43,11 +43,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     zIndex: 5,
   },
-  modalMenuBtnText: {
-    color: colors.lightPurple,
-    fontFamily: 'Montserrat-Bold',
-    fontSize: 40,
-  },
 
   webHeaderWrapper: {
     width: '100%',
@@ -77,29 +72,6 @@ const styles = StyleSheet.create({
     fontFamily: Montserrat,
     fontSize: 24,
   },
-  // bookBtn: {
-  //   width: 120,
-  //   height: 45,
-  //   justifyContent: 'center',
-  //   alignItems: 'center',
-  //   backgroundColor: colors.lightPurple,
-  //   borderRadius: 5,
-  //   paddingTop: 10,
-  //   paddingBottom: 10,
-  //   shadowColor: colors.black,
-  //   shadowOffset: {
-  //     width: 2,
-  //     height: 1.5,
-  //   },
-  //   shadowOpacity: 0.25,
-  //   shadowRadius: 3.84,
-  //   elevation: 5,
-  // },
-  // bookBtnText: {
-  //   color: colors.white,
-  //   fontFamily: Montserrat,
-  //   fontSize: 30,
-  // },
 });
 
 export default styles;

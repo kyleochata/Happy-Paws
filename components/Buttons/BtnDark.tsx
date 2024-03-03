@@ -4,6 +4,7 @@ import { buttonStyles as styles } from '../../utils/constants';
 
 type BtnDarkProps = {
   value: string;
+  onPress: () => void;
 };
 
 const BtnDark = ({ value }: BtnDarkProps) => {
@@ -12,9 +13,6 @@ const BtnDark = ({ value }: BtnDarkProps) => {
   return (
     <TouchableOpacity
       style={styles.bookBtnDark}
-      onPress={() => {
-        navigation.navigate('Services')
-      }}
     >
       <Text style={styles.bookBtnLTxt}>{value}</Text>
     </TouchableOpacity>

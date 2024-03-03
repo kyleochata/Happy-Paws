@@ -1,13 +1,46 @@
 import { useState } from 'react';
-import { Platform, View, Text, TextInput, Image } from 'react-native';
+import { Platform, View, Text, TextInput, Image, KeyboardAvoidingView } from 'react-native';
 import styles from './style';
 import BtnDark from '../Buttons/BtnDark';
+import Form from '../Form';
+
+interface FormData {
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+};
 
 const Contact = () => {
   const mobile = Platform.OS !== 'web';
   // WILL GO BACK TO FIX CONTACT FORM
-  const [formData, setFormData] = useState<any>({ name: '', email: '', phone: '', message: '' });
-  const { name, email, phone, message } = formData;
+  const [formData, setFormData] = useState<FormData>({
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+  });
+  
+  const handleChange = (name: any, value: any) => {
+    setFormData({ ...formData, [name]: value });
+  };
+  
+  const handleSubmit = () => {
+    console.log('Your message has been submitted!', formData);
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      message: '',
+    })
+  };
+
+  const inputs = [
+    { name: 'name', label: 'Name', value: formData.name },
+    { name: 'email', label: 'Email', value: formData.email },
+    { name: 'phone', label: 'Phone Number', value: formData.phone },
+    { name: 'message', label: 'Message', value: formData.message, multiline: true }
+  ];
 
   return (
     <View style={mobile ? styles.mobileContactWrapper : styles.webContactWrapper}>
@@ -15,41 +48,17 @@ const Contact = () => {
       <Text style={mobile ? styles.mobileContactH2 : styles.webContactH2}>Don't hesitate to reach out to us. Our team is here to help!</Text>
 
       {/* CONTACT FORM */}
-      <View style={mobile ? styles.mobileContactFormWrap : styles.webContactFormWrap}>
+      <KeyboardAvoidingView style={mobile ? styles.mobileContactFormWrap : styles.webContactFormWrap}>
         <View style={mobile ? styles.mobileContactForm : styles.webContactForm}>
-          <Text style={mobile ? styles.mobileContactUs : styles.webContactUs}>Contact Us</Text>
-
-          <Text style={mobile ? styles.mobileContactFormLabel : styles.webContactFormLabel}>Name</Text>
-          <TextInput
-            style={mobile ? styles.mobileContactInput : styles.webContactInput}
-            onChange={(value) => setFormData({...formData, name: value})}
-            value={name}
-          />
-          <Text style={mobile ? styles.mobileContactFormLabel : styles.webContactFormLabel}>Email</Text>
-          <TextInput
-            style={mobile ? styles.mobileContactInput : styles.webContactInput}
-            onChange={(value) => setFormData({...formData, email: value})}
-            inputMode='email'
-            value={email}
-          />
-          <Text style={mobile ? styles.mobileContactFormLabel : styles.webContactFormLabel}>Phone Number</Text>
-          <TextInput
-            style={mobile ? styles.mobileContactInput : styles.webContactInput}
-            onChange={(value) => setFormData({...formData, phone: value})}
-            inputMode='tel'
-            value={phone}
-          />
-          <Text style={mobile ? styles.mobileContactFormLabel : styles.webContactFormLabel}>Message</Text>
-          <TextInput
-            style={mobile ? styles.mobileContactTextArea : styles.webContactTextArea}
-            onChange={(value) => setFormData({...formData, message: value})}
-            multiline
-            numberOfLines={4}
-            value={message}
-          />
+          <Form
+              inputs={inputs}
+              handleChange={handleChange}
+              mobile={mobile}
+              handleSubmit={handleSubmit}
+            />
 
           <View style={mobile ? styles.mobileSubmitBtn : styles.webSubmitBtn}>
-            <BtnDark value='Submit' />
+            <BtnDark value='Submit' onPress={handleSubmit} />
           </View>
         </View>
         
@@ -57,7 +66,7 @@ const Contact = () => {
           source={require('../../assets/images/contact-pets.jpg')}
           style={mobile ? styles.mobileContactImg : styles.webContactImg}
         />
-      </View>
+      </KeyboardAvoidingView>
     </View>
   );
 };

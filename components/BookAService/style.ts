@@ -1,5 +1,4 @@
 import { StyleSheet } from 'react-native';
-import { Montserrat } from '../../utils/fonts';
 import { colors } from '../../utils/constants';
 
 const styles = StyleSheet.create({
@@ -61,6 +60,7 @@ const styles = StyleSheet.create({
     paddingRight: 15,
     paddingTop: 15,
     paddingBottom: 15,
+    verticalAlign: 'top',
   },
   mobRadioBtnForm: {
     width: '100%',
@@ -115,8 +115,8 @@ const styles = StyleSheet.create({
   },
   webH2: {
     color: colors.black,
-    fontSize: 30,
-    fontFamily: 'Montserrat-SemiBold',
+    fontSize: 26,
+    fontFamily: 'Montserrat-Medium',
   },
   webFormWrap: {
     width: '100%',
@@ -155,31 +155,32 @@ const styles = StyleSheet.create({
   },
   webFormLabel: {
     color: colors.black,
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: 'Montserrat-SemiBold',
     fontSize: 30,
     marginBottom: 5,
   },
-  webInput: {
-    backgroundColor: colors.lavender,
-    borderRadius: 10,
-    width: '100%',
-    maxWidth: 600,
-    height: 45,
-    paddingLeft: 15,
-    paddingRight: 15,
-    marginBottom: 10,
-  },
-  webTextArea: {
-    backgroundColor: colors.lavender,
-    borderRadius: 10,
-    width: '100%',
-    maxWidth: 600,
-    height: 274,
-    paddingLeft: 15,
-    paddingRight: 15,
-    paddingTop: 15,
-    paddingBottom: 15,
-  },
+  // webInput: {
+  //   backgroundColor: colors.lavender,
+  //   borderRadius: 10,
+  //   width: '100%',
+  //   maxWidth: 600,
+  //   height: 45,
+  //   paddingLeft: 15,
+  //   paddingRight: 15,
+  //   marginBottom: 10,
+  // },
+  // webTextArea: {
+  //   backgroundColor: colors.lavender,
+  //   borderRadius: 10,
+  //   width: '100%',
+  //   maxWidth: 600,
+  //   height: 274,
+  //   paddingLeft: 15,
+  //   paddingRight: 15,
+  //   paddingTop: 15,
+  //   paddingBottom: 15,
+  //   verticalAlign: 'top',
+  // },
   webRadioBtnForm: {
     width: '100%',
     maxWidth: 500,
@@ -199,6 +200,8 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     gap: 15,
+    marginTop: 10,
+    marginBottom: 25,
     paddingLeft: 30,
     paddingRight: 30,
   },
@@ -208,6 +211,49 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingTop: 33,
+  },
+
+  calendar: {
+    width: '100%',
+    minWidth: '100%',
+    height: 44,
+    backgroundColor: colors.lavender,
+    borderRadius: 10,
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  calendarIcon: {
+    paddingTop: 8,
+    paddingRight: 10,
+    paddingBottom: 8,
+    paddingLeft: 10,
+  },
+  date: {
+    fontFamily: 'Montserrat-Medium',
+    fontSize: 20,
+    color: colors.black,
+    paddingTop: 8,
+    paddingRight: 10,
+    paddingBottom: 8,
+    paddingLeft: 10,
+  },
+  calendarDropdown: {
+    width: 339,
+    height: 375,
+    position: 'absolute',
+    marginTop: 50,
+    left: 0,
+    right: 0,
+    shadowColor: colors.black,
+    shadowOffset: {
+      width: 2,
+      height: 1.5,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
 });
 
