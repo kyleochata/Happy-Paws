@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
   },
   wHSText: {
     fontFamily: FiraSans,
-    fontSize: 16,
+    fontSize: 18,
     color: colors.white,
     textAlign: 'center',
   },
