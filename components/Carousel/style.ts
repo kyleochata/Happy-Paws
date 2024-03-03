@@ -1,10 +1,23 @@
 import { StyleSheet } from 'react-native';
-import { Montserrat, FiraSans } from '../../utils/fonts'
-import { colors } from '../../utils/constants';
 
 const styles = StyleSheet.create({
+  carousel: {
+    marginHorizontal: 5,
+  },
+
   mobileCarouselContainer: {
-    marginBottom: 95,
+    width: '100%',
+    maxWidth: 1090,
+    marginBottom: 62,
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: 8,
+  },
+  mobileImages: {
+    width: 200,
+    height: 329,
   },
 
   webCarouselContainer: {
@@ -18,11 +31,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 15,
   },
-  webCarousel: {
-    overflow: 'hidden',
-    marginHorizontal: 5,
-  },
-  images: {
+  webImages: {
     width: 289,
     height: 435,
   }

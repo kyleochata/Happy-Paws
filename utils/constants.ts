@@ -71,7 +71,24 @@ export const buttonStyles = StyleSheet.create({
     fontWeight: '600',
     letterSpacing: 1,
   },
-  viewPhotosBtn: {
+  mobileViewPhotosBtn: {
+    backgroundColor: colors.lightPurple,
+    width: 110,
+    height: 30,
+    borderRadius: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginVertical: 10,
+    shadowColor: colors.black,
+    shadowOffset: {
+      width: 2,
+      height: 1.5,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  webViewPhotosBtn: {
     backgroundColor: colors.lightPurple,
     width: 200,
     height: 50,
@@ -88,7 +105,12 @@ export const buttonStyles = StyleSheet.create({
     shadowRadius: 3.84,
     elevation: 5,
   },
-  photosBtnLTxt: {
+  mobilePhotosBtnLTxt: {
+    color: colors.white,
+    fontFamily: 'FiraSans-SemiBold',
+    fontSize: 14,
+  },
+  webPhotosBtnLTxt: {
     color: colors.white,
     fontFamily: 'FiraSans-SemiBold',
     fontSize: 20,

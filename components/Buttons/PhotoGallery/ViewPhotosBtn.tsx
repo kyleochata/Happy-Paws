@@ -1,4 +1,4 @@
-import { TouchableOpacity, Text } from 'react-native';
+import { Platform, TouchableOpacity, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { buttonStyles as styles } from '../../../utils/constants';
 
@@ -7,16 +7,17 @@ type ViewPhotosBtnProps = {
 };
 
 const ViewPhotosBtn = ({ value }: ViewPhotosBtnProps) => {
+  const mobile = Platform.OS !== 'web';
   const navigation = useNavigation<any>()
   
   return (
     <TouchableOpacity
-      style={styles.viewPhotosBtn}
+      style={mobile ? styles.mobileViewPhotosBtn : styles.webViewPhotosBtn}
       onPress={() => {
         navigation.navigate('Services')
       }}
     >
-      <Text style={styles.photosBtnLTxt}>{value}</Text>
+      <Text style={mobile ? styles.mobilePhotosBtnLTxt : styles.webPhotosBtnLTxt}>{value}</Text>
     </TouchableOpacity>
   );
 };

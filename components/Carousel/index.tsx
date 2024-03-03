@@ -1,5 +1,5 @@
 import { Platform, View, Text, Dimensions, Image, FlatList, TouchableOpacity } from 'react-native';
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState } from 'react';
 import { buttonStyles } from '../../utils/constants';
 import styles from './style';
 
@@ -59,8 +59,8 @@ const Carousel = () => {
         pagingEnabled
         keyExtractor={(item, index) => index.toString()}
         renderItem={({ item }) => (
-          <View style={styles.webCarousel}>
-          <Image source={{ uri: item }} style={styles.images} />
+          <View style={styles.carousel}>
+          <Image source={{ uri: item }} style={mobile ? styles.mobileImages : styles.webImages} />
           </View>
         )}
         initialScrollIndex={index}
