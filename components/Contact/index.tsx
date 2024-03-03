@@ -1,10 +1,13 @@
 import { useState } from 'react';
 import { Platform, View, Text, TextInput, Image } from 'react-native';
 import styles from './style';
+import BookBtnDark from '../Buttons/BookNow/BookBtnDark';
 
 const Contact = () => {
   const mobile = Platform.OS !== 'web';
-  const [text, setText] = useState<string>('');
+  // WILL GO BACK TO FIX CONTACT FORM
+  const [formData, setFormData] = useState<any>({ name: '', email: '', phone: '', message: '' });
+  const { name, email, phone, message } = formData;
 
   return (
     <View style={mobile ? styles.mobileContactWrapper : styles.webContactWrapper}>
@@ -16,35 +19,40 @@ const Contact = () => {
         <View style={mobile ? styles.mobileContactForm : styles.webContactForm}>
           <Text style={mobile ? styles.mobileContactUs : styles.webContactUs}>Contact Us</Text>
 
-          <Text style={styles.contactFormLabel}>Name</Text>
+          <Text style={mobile ? styles.mobileContactFormLabel : styles.webContactFormLabel}>Name</Text>
           <TextInput
-            style={styles.contactInput}
-            onChangeText={setText}
-            value={text}
+            style={mobile ? styles.mobileContactInput : styles.webContactInput}
+            onChange={(value) => setFormData({...formData, name: value})}
+            value={name}
           />
-          <Text style={styles.contactFormLabel}>Email</Text>
+          <Text style={mobile ? styles.mobileContactFormLabel : styles.webContactFormLabel}>Email</Text>
           <TextInput
-            style={styles.contactInput}
-            onChangeText={setText}
-            value={text}
+            style={mobile ? styles.mobileContactInput : styles.webContactInput}
+            onChange={(value) => setFormData({...formData, email: value})}
+            inputMode='email'
+            value={email}
           />
-          <Text style={styles.contactFormLabel}>Phone Number</Text>
+          <Text style={mobile ? styles.mobileContactFormLabel : styles.webContactFormLabel}>Phone Number</Text>
           <TextInput
-            style={styles.contactInput}
-            onChangeText={setText}
-            value={text}
+            style={mobile ? styles.mobileContactInput : styles.webContactInput}
+            onChange={(value) => setFormData({...formData, phone: value})}
+            inputMode='tel'
+            value={phone}
           />
-          <Text style={styles.contactFormLabel}>Message</Text>
+          <Text style={mobile ? styles.mobileContactFormLabel : styles.webContactFormLabel}>Message</Text>
           <TextInput
-            style={styles.contactTextArea}
-            onChangeText={setText}
+            style={mobile ? styles.mobileContactTextArea : styles.webContactTextArea}
+            onChange={(value) => setFormData({...formData, message: value})}
+            multiline
             numberOfLines={4}
-            value={text}
+            value={message}
           />
 
-
-
+          <View style={mobile ? styles.mobileSubmitBtn : styles.webSubmitBtn}>
+            <BookBtnDark value='Submit' />
+          </View>
         </View>
+        
         
         <Image
           source={require('../../assets/images/contact-pets.jpg')}
