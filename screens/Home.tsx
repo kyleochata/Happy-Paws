@@ -8,6 +8,7 @@ import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import styles from '../utils/constants'
 import ValueBanner from '../components/Banner/ValuesBanner/index'
+import About from '../components/About'
 
 const HomeScreen = () => {
   //const navigation = useNavigation<any>()
@@ -25,6 +26,7 @@ const HomeScreen = () => {
       </Container>
       <ValueBanner />
       <Container>
+        <About />
         <Contact />
       </Container>
       <Footer />

@@ -1,13 +1,13 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
   container: {
-    width: '95%',
+    width: '90%',
   },
   webContainer: {
     width: '100%',
     maxWidth: 1280,
-  }
-});
+  },
+})
 
-export default styles;
+export default styles
