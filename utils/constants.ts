@@ -71,4 +71,44 @@ export const buttonStyles = StyleSheet.create({
     fontWeight: '600',
     letterSpacing: 1,
   },
+  viewPhotosBtn: {
+    backgroundColor: colors.lightPurple,
+    width: 200,
+    height: 50,
+    borderRadius: 15,
+    alignItems: 'center', // Center the button horizontally
+    justifyContent: 'center', // Center the button vertically
+    marginVertical: 10,
+    shadowColor: colors.black,
+    shadowOffset: {
+      width: 2,
+      height: 1.5,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  photosBtnLTxt: {
+    color: colors.white,
+    fontFamily: 'FiraSans-SemiBold',
+    fontSize: 20,
+    letterSpacing: 1
+  },
+  arrowBtn: {
+    backgroundColor: colors.lightPurple,
+    width: 40,
+    height: 86,
+    borderRadius: 10,
+    alignItems: 'center', // Center the button horizontally
+    justifyContent: 'center', // Center the button vertically
+    marginVertical: 10,
+    shadowColor: colors.black,
+    shadowOffset: {
+      width: 2,
+      height: 1.5,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
 })

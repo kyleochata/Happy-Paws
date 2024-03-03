@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Platform, View, Text, TextInput, Image } from 'react-native';
 import styles from './style';
-import BookBtnDark from '../Buttons/BookNow/BookBtnDark';
+import BookBtnDark from '../Buttons/BtnDark';
 
 const Contact = () => {
   const mobile = Platform.OS !== 'web';

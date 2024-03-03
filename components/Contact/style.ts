@@ -83,6 +83,7 @@ const styles = StyleSheet.create({
   },
 
   webContactH1: {
+    marginTop: 44,
     marginBottom: 20,
     color: colors.darkPurple,
     fontSize: 40,

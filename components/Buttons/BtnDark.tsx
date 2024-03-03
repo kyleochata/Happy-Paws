@@ -1,12 +1,12 @@
 import { Text, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { buttonStyles as styles } from '../../../utils/constants';
+import { buttonStyles as styles } from '../../utils/constants';
 
-type BookBtnDarkProps = {
+type BtnDarkProps = {
   value: string;
 };
 
-const BookBtnDark = ({ value }: BookBtnDarkProps) => {
+const BtnDark = ({ value }: BtnDarkProps) => {
   const navigation = useNavigation<any>();
 
   return (
@@ -21,4 +21,4 @@ const BookBtnDark = ({ value }: BookBtnDarkProps) => {
   );
 };
 
-export default BookBtnDark;
+export default BtnDark;
