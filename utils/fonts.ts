@@ -21,6 +21,7 @@ export const useFontLoading = () => {
         [FiraSans]: require('../assets/fonts/FiraSans/FiraSans-Regular.ttf'),
         'FiraSans-Bold': require('../assets/fonts/FiraSans/FiraSans-Bold.ttf'),
         'FiraSans-Medium': require('../assets/fonts/FiraSans/FiraSans-Medium.ttf'),
+        'FiraSans-SemiBold': require('../assets/fonts/FiraSans/FiraSans-SemiBold.ttf'),
       })
       setFontsLoaded(true)
     }
