@@ -3,6 +3,11 @@ import { Montserrat, FiraSans } from '../../utils/fonts'
 import { colors } from '../../utils/constants';
 
 const styles = StyleSheet.create({
+  mobileContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   mobileIntro: {
     width: '100%',
     display: 'flex',
@@ -34,13 +39,12 @@ const styles = StyleSheet.create({
   mobileCarouselContainer: {
     marginBottom: 95,
   },
-  mobileArrowBtn: {
 
+  webContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  mobileCarousel: {
-
-  },
-
   webIntro: {
     marginTop: 84,
     width: '100%',
@@ -73,6 +77,7 @@ const styles = StyleSheet.create({
   },
   webCarouselContainer: {
     width: '100%',
+    maxWidth: 1000,
     marginTop: 40,
     marginBottom: 95,
     display: 'flex',
@@ -80,16 +85,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     gap: 15,
-  },
-  webArrowBtn: {
-
-  },
-  webCarousel: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: 8,
   },
 });
 
