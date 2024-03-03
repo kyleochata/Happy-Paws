@@ -31,6 +31,7 @@ const HomeScreen = () => {
         <About />
         <HServices />
         <PhotoGallery />
+
         <Contact />
       </Container>
       <Footer />
