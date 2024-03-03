@@ -1,6 +1,6 @@
-import { StyleSheet } from 'react-native';
-import { Montserrat, FiraSans } from '../../utils/fonts';
-import { colors } from '../../utils/constants';
+import { StyleSheet } from 'react-native'
+import { Montserrat, FiraSans } from '../../utils/fonts'
+import { colors } from '../../utils/constants'
 
 const styles = StyleSheet.create({
   heroTitle: {
@@ -49,7 +49,8 @@ const styles = StyleSheet.create({
 
   webHeroImg: {
     width: '100%',
-    height: 400,
+    maxHeight: 650,
+    minHeight: 400,
     resizeMode: 'contain',
     minWidth: 375,
   },
@@ -61,12 +62,14 @@ const styles = StyleSheet.create({
     width: '100%',
     flexWrap: 'wrap',
     minWidth: 375,
+    marginBottom: 20,
   },
   webHIContainer: {
     maxWidth: 640,
     minWidth: 375,
     width: '50%',
-    height: 400,
+    height: '100%',
+    maxHeight: 650,
     overflow: 'hidden',
     justifyContent: 'center',
     alignItems: 'center',
@@ -104,6 +107,6 @@ const styles = StyleSheet.create({
     fontSize: 30,
     marginBottom: 15,
   },
-});
+})
 
-export default styles;
+export default styles
