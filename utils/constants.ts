@@ -50,8 +50,8 @@ export const buttonStyles = StyleSheet.create({
     width: 184,
     height: 50,
     borderRadius: 15,
-    alignItems: 'center', // Center the button horizontally
-    justifyContent: 'center', // Center the button vertically
+    alignItems: 'center',
+    justifyContent: 'center',
     marginVertical: 10,
     marginTop: 10,
     marginBottom: 10,
@@ -76,8 +76,8 @@ export const buttonStyles = StyleSheet.create({
     width: 200,
     height: 50,
     borderRadius: 15,
-    alignItems: 'center', // Center the button horizontally
-    justifyContent: 'center', // Center the button vertically
+    alignItems: 'center',
+    justifyContent: 'center',
     marginVertical: 10,
     shadowColor: colors.black,
     shadowOffset: {
@@ -99,8 +99,8 @@ export const buttonStyles = StyleSheet.create({
     width: 40,
     height: 86,
     borderRadius: 10,
-    alignItems: 'center', // Center the button horizontally
-    justifyContent: 'center', // Center the button vertically
+    alignItems: 'center',
+    justifyContent: 'center',
     marginVertical: 10,
     shadowColor: colors.black,
     shadowOffset: {

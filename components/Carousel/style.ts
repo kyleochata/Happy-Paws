@@ -6,12 +6,6 @@ const styles = StyleSheet.create({
   mobileCarouselContainer: {
     marginBottom: 95,
   },
-  mobileArrowBtn: {
-
-  },
-  mobileCarousel: {
-
-  },
 
   webCarouselContainer: {
     width: '100%',
