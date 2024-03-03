@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: colors.black,
     marginTop: 10,
-    marginBottom: 10,
+    marginBottom: 0,
     textAlign: 'center',
   },
 })
