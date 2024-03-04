@@ -21,27 +21,29 @@ const styles = StyleSheet.create({
   },
   wHSSTitle: {
     fontFamily: 'Montserrat-SemiBold',
-    fontSize: 44,
+    fontSize: 50,
+    fontWeight: '600',
     color: colors.darkPurple,
     margin: 20,
+    textAlign: 'center',
   },
-  wHSCard: {
+  wSSACard: {
     backgroundColor: colors.lightPurple,
     color: colors.white,
     flexDirection: 'column',
     justifyContent: 'space-evenly',
     alignItems: 'center',
     padding: 20,
-    maxWidth: '23%',
+    maxWidth: '30%',
+    minWidth: 300,
     minHeight: 500,
     gap: 20,
     borderRadius: 15,
   },
-  wHSTitle: {
+  wSSATitle: {
     fontFamily: 'Montserrat-Bold',
     fontSize: 30,
     color: colors.white,
-    width: 170,
     textAlign: 'center',
   },
   wHSImg: {
@@ -55,10 +57,22 @@ const styles = StyleSheet.create({
     color: colors.white,
     textAlign: 'center',
   },
+  wSSAText: {
+    fontFamily: FiraSans,
+    fontSize: 22,
+    fontWeight: '400',
+    textAlign: 'center',
+  },
+  wSSATBold: {
+    fontFamily: FiraSans,
+    fontSize: 22,
+    fontWeight: '700',
+  },
   mHSSTitle: {
     fontFamily: 'Montserrat-SemiBold',
     fontSize: 36,
     color: colors.darkPurple,
+    textAlign: 'center',
   },
   mHSCard: {
     backgroundColor: colors.lightPurple,
@@ -98,6 +112,16 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     paddingTop: 5,
     paddingBottom: 5,
+  },
+  mSSAText: {
+    fontFamily: FiraSans,
+    fontSize: 16,
+    fontWeight: '400',
+  },
+  mSSATBold: {
+    fontFamily: FiraSans,
+    fontSize: 18,
+    fontWeight: '700',
   },
 })
 
