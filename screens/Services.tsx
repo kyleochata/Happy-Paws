@@ -7,11 +7,13 @@ import BookAService from '../components/BookAService'
 import styles from '../utils/constants'
 import Container from '../components/Container'
 import SpecialAcc from '../components/SpecialAcc'
+import Services from '../components/Services'
 
 const ServicesScreen = () => {
   const navigation = useNavigation<any>()
   const data = [
     { id: 'header' },
+    { id: 'services' },
     { id: 'special' },
     { id: 'bookaservice' },
     { id: 'footer' },
@@ -25,6 +27,12 @@ const ServicesScreen = () => {
             <Header />
           </View>
         )
+      case 'services':
+        return (
+          <View style={styles.stretchCon}>
+            <Services />
+          </View>
+        )
       case 'special':
         return (
           <View style={styles.stretchCon}>
@@ -33,7 +41,6 @@ const ServicesScreen = () => {
             </Container>
           </View>
         )
-
       case 'bookaservice':
         return (
           <View style={styles.stretchCon}>

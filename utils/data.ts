@@ -10,6 +10,7 @@ export const homeData = [
 
 export const servicesData = [
   { id: 'header' },
+  { id: 'services' },
   { id: 'special' },
   { id: 'bookAService' },
   { id: 'footer' },
@@ -36,7 +37,8 @@ export const petServicesData = [
         price: 80,
         description: `Includes a luxury suite with plush bedding, gourmet meals, personalized attention from staff, daily enrichment activities, and additional amenities such as bedtime stories or cuddle time.`,
       },
-    ]
+    ],
+    imageUrl: `https://i.ibb.co/KKj5MJ8/toller-dog-lies-in-blue-bed-2024-02-08-20-45-19-utc.jpg`
   },
   {
     label: 'Daycare',
@@ -58,7 +60,8 @@ export const petServicesData = [
         price: 50,
         description: `Includes premium supervised play sessions with structured activities, enrichment programs, specialized attention from staff, and additional amenities such as gourmet treats or personalized playtime.`,
       },
-    ]
+    ],
+    imageUrl: `https://i.ibb.co/T1D188T/australian-cattle-dog-puppy-outdoor-blue-and-red-2023-11-27-05-11-52-utc.jpg`
   },
   {
     label: 'Grooming',
@@ -80,7 +83,8 @@ export const petServicesData = [
         price: 75,
         description: `Includes a premium grooming expeirence with specialized shampoos and conditioners, breed-specific styling, and extra pamperings such as paw massages or aromatherapy treatments.`,
       },
-    ]
+    ],
+    imageUrl: `https://i.ibb.co/5sjg0J1/lovely-poodle-enjoying-treatment-in-pet-salon-2023-11-27-04-52-12-utc.jpg`
   },
   {
     label: 'Training',
@@ -102,7 +106,8 @@ export const petServicesData = [
         price: 100,
         description: `Includes advanced training programs with one-on-one attention, behavior modification plans, and specialized training techniques such as agility or therapy dog training.`,
       },
-    ]
+    ],
+    imageUrl: `https://i.ibb.co/C8tzcGz/female-trainer-teaching-an-obedient-cute-beagle-th-2023-11-27-05-07-37-utc.jpg`
   },
   {
     label: 'Overnight Boarding',
@@ -124,7 +129,8 @@ export const petServicesData = [
         price: 70,
         description: `Includes a luxury suite with plush bedding, gourmet meals, personalized attention from staff, daily enrichment activities, and additional amenities such as toys or scratching posts.`,
       },
-    ]
+    ],
+    imageUrl: `https://i.ibb.co/W06YbTT/british-cat-lying-cat-tree-scratching-post-2023-11-27-05-05-26-utc.jpg`
   },
   {
     label: 'Daycare',
@@ -146,7 +152,8 @@ export const petServicesData = [
         price: 45,
         description: `Includes premium supervised play sessions with enrichment activities, specialized attention from staff, and additional amenities such as gourmet treats or cozy hideaways.`,
       },
-    ]
+    ],
+    imageUrl: `https://i.ibb.co/dWm2mhq/a-small-brown-leopard-tiger-bengal-kitten-plays-wi-2023-11-27-04-56-33-utc.jpg`
   },
   {
     label: 'Grooming',
@@ -168,6 +175,7 @@ export const petServicesData = [
         price: 60,
         description: `Includes a premium grooming expeirence with high-quality products, gentle handling, and extra pampering such as a fur massage or nail buffing.`,
       },
-    ]
+    ],
+    imageUrl: `https://i.ibb.co/k5DtpWT/cutting-the-nails-scottish-fold-cat-is-in-the-gro-2023-11-27-05-30-55-utc.jpg`
   },
 ]
