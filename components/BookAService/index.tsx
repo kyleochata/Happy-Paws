@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Platform, View, Text, KeyboardAvoidingView } from 'react-native';
+import { AntDesign } from '@expo/vector-icons';
 
 import styles from './style';
 import { useServiceForm } from '../../utils/hooks';
@@ -15,7 +16,6 @@ const BookAService = () => {
   const mobile = Platform.OS !== 'web';
   const { inputs, handleChange, handleSubmit } = useServiceForm();
 
-  // RADIO BUTTON
   const [selectedPetType, setSelectedPetType] = useState<string>('');
   const petTypeOptions: RadioOption[] = [
     { label: 'Cat', value: 'cat' },
@@ -56,10 +56,47 @@ const BookAService = () => {
     { label: 'No', value: 'no' },
   ];
 
+  const renderServicesSection = () => (
+    <>
+      <Text style={mobile ? styles.mobFormLabel : styles.webFormLabel}>Services:</Text>
+      <View style={mobile ? styles.mobServices : styles.webServices}>
+        <RadioButtonGroup
+          label='Overnight Boarding'
+          options={boardingOptions}
+          selectedOption={selectedBoardingOption}
+          onSelect={value => setSelectedBoardingOption(value)}
+        />
+        <Divider orientation='horizontal' />
+        <RadioButtonGroup
+          label='Daycare'
+          options={daycareOptions}
+          selectedOption={selectedDaycare}
+          onSelect={value => setSelectedDaycare(value)}
+        />
+        <Divider orientation='horizontal' />
+        <RadioButtonGroup
+          label='Grooming'
+          options={groomingOptions}
+          selectedOption={selectedGrooming}
+          onSelect={value => setSelectedGrooming(value)}
+        />
+        <Divider orientation='horizontal' />
+        {/* IF CAT IS SELECTED, HIDE TRAINING SECTION */}
+        {selectedPetType === 'cat' ? '' : (
+          <RadioButtonGroup
+            label='Training'
+            options={trainingOptions}
+            selectedOption={selectedTraining}
+            onSelect={value => setSelectedTraining(value)}
+          />
+        )}
+      </View>
+    </>
+  );
+
   return (
     <View style={mobile ? styles.mobWrapper : styles.webWrapper}>
       <Container>
-        {/* v PREVENT KEYBOARD FROM COVERING INPUT BOXES */}
         <KeyboardAvoidingView
           behavior='padding'
           keyboardVerticalOffset={Platform.OS === 'ios' ? 100 : 0}
@@ -67,86 +104,127 @@ const BookAService = () => {
         >
           <Text style={mobile ? styles.mobH1 : styles.webH1}>Book a Service</Text>
 
-          {/* USER FORM */}
-          <View style={mobile ? styles.mobForm : styles.webForm}>
-            <Form
-              inputs={inputs}
-              handleChange={handleChange}
-              mobile={mobile}
-              handleSubmit={handleSubmit}
-            />
-          </View>
+          {mobile ? (
+            <>
+              {/* RADIO BUTTONS FORM */}
+              <View style={styles.mobRadioBtnForm}>
+                {/* PET TYPE */}
+                <View style={styles.mobRadioBtnFormWrap}>
+                  <Text style={styles.mobFormLabel}>Pet:</Text>
+                  <RadioButtonGroup
+                    label='Pet:'
+                    options={petTypeOptions}
+                    selectedOption={selectedPetType}
+                    onSelect={value => setSelectedPetType(value)}
+                  />
+                </View>
 
-          {/* RADIO BUTTONS FORM */}
-          <View style={mobile ? styles.mobRadioBtnForm : styles.webRadioBtnForm}>
-            {/* PET TYPE */}
-            <View style={mobile ? styles.mobRadioBtnFormWrap : styles.webRadioBtnFormWrap}>
-              <Text style={mobile ? styles.mobFormLabel : styles.webFormLabel}>Pet:</Text>
-              <RadioButtonGroup
-                label='Pet:'
-                options={petTypeOptions}
-                selectedOption={selectedPetType}
-                onSelect={value => setSelectedPetType(value)}
-              />
-            </View>
+                {renderServicesSection()}
 
-            {/* SERVICES SECTION */}
-            <Text style={mobile ? styles.mobFormLabel  : styles.webFormLabel }>Services:</Text>
-            <View style={mobile ? styles.mobServices : styles.webServices}>
-              <RadioButtonGroup
-                label='Overnight Boarding'
-                options={boardingOptions}
-                selectedOption={selectedBoardingOption}
-                onSelect={value => setSelectedBoardingOption(value)}
-              />
-              <Divider orientation='horizontal' />
-              <RadioButtonGroup
-                label='Daycare'
-                options={daycareOptions}
-                selectedOption={selectedDaycare}
-                onSelect={value => setSelectedDaycare(value)}
-              />
-              <Divider orientation='horizontal' />
-              <RadioButtonGroup
-                label='Grooming'
-                options={groomingOptions}
-                selectedOption={selectedGrooming}
-                onSelect={value => setSelectedGrooming(value)}
-              />
-              <Divider orientation='horizontal' />
-              {/* IF CAT IS SELECTED, HIDE TRAINING SECTION */}
-              {selectedPetType === 'cat' ? '' : (
-                <RadioButtonGroup
-                  label='Training'
-                  options={trainingOptions}
-                  selectedOption={selectedTraining}
-                  onSelect={value => setSelectedTraining(value)}
+                {/* SPECIAL NEEDS SECTION */}
+                <View style={styles.mobRadioBtnFormWrap}>
+                  <Text style={styles.mobFormLabel}>Special Needs:</Text>
+                  <RadioButtonGroup
+                    label='Special Needs:'
+                    options={specialNeedsOptions}
+                    selectedOption={selectedSpNeeds}
+                    onSelect={value => setSelectedSpNeeds(value)}
+                  />
+                </View>
+
+                {/* DATE & CALENDAR SECTION */}
+                <View style={styles.mobRadioBtnFormWrap}>
+                  {selectedBoardingOption ? (
+                    <Text style={styles.mobFormLabel}>Dates:</Text>
+                  ) : (
+                    <Text style={styles.mobFormLabel}>Date:</Text>
+                  )}
+                  {selectedBoardingOption ? (
+                    <View style={styles.dateRangeWrapper}>
+                      <CalendarDropdown />
+                      <AntDesign name='minus' size={24} color='black' />
+                      <CalendarDropdown />
+                    </View>
+                  ) : (
+                    <CalendarDropdown />
+                  )}
+                </View>
+              </View>
+
+              {/* USER FORM */}
+              <View style={styles.mobForm}>
+                <Form
+                  inputs={inputs}
+                  handleChange={handleChange}
+                  mobile={mobile}
+                  handleSubmit={handleSubmit}
                 />
-              )}
-            </View>
-            {/* SPECIAL NEEDS SECTION */}
-            <View style={mobile ? styles.mobRadioBtnFormWrap : styles.webRadioBtnFormWrap}>
-              <Text style={mobile ? styles.mobFormLabel : styles.webFormLabel}>Special Needs:</Text>
-                <RadioButtonGroup
-                  label='Special Needs:'
-                  options={specialNeedsOptions}
-                  selectedOption={selectedSpNeeds}
-                  onSelect={value => setSelectedSpNeeds(value)}
+              </View>
+            </>
+          ) : (
+            <>
+              {/* !! DESKTOP VIEW USER FORM !! */}
+              <View style={styles.webForm}>
+                <Form
+                  inputs={inputs}
+                  handleChange={handleChange}
+                  mobile={mobile}
+                  handleSubmit={handleSubmit}
                 />
-            </View>
+              </View>
 
-            {/* DATE & CALENDAR SECTION */}
-            <View style={mobile ? styles.mobRadioBtnFormWrap : styles.webRadioBtnFormWrap}>
-              <Text style={mobile ? styles.mobFormLabel : styles.webFormLabel}>Date:</Text>
-              <CalendarDropdown />
-            </View>
-          </View>
+              {/* RADIO BUTTONS FORM */}
+              <View style={styles.webRadioBtnForm}>
+                {/* PET TYPE */}
+                <View style={styles.webRadioBtnFormWrap}>
+                  <Text style={styles.webFormLabel}>Pet:</Text>
+                  <RadioButtonGroup
+                    label='Pet:'
+                    options={petTypeOptions}
+                    selectedOption={selectedPetType}
+                    onSelect={value => setSelectedPetType(value)}
+                  />
+                </View>
+
+                {renderServicesSection()}
+
+                {/* SPECIAL NEEDS SECTION */}
+                <View style={styles.webRadioBtnFormWrap}>
+                  <Text style={styles.webFormLabel}>Special Needs:</Text>
+                  <RadioButtonGroup
+                    label='Special Needs:'
+                    options={specialNeedsOptions}
+                    selectedOption={selectedSpNeeds}
+                    onSelect={value => setSelectedSpNeeds(value)}
+                  />
+                </View>
+
+                {/* DATE & CALENDAR SECTION */}
+                <View style={styles.webRadioBtnFormWrap}>
+                  {selectedBoardingOption ? (
+                    <Text style={styles.webFormLabel}>Dates:</Text>
+                  ) : (
+                    <Text style={styles.webFormLabel}>Date:</Text>
+                  )}
+                  {selectedBoardingOption ? (
+                    <View style={styles.dateRangeWrapper}>
+                      <CalendarDropdown />
+                      <AntDesign name='minus' size={24} color='black' />
+                      <CalendarDropdown />
+                    </View>
+                  ) : (
+                    <CalendarDropdown />
+                  )}
+                </View>
+              </View>
+            </>
+          )}
 
           {/* SUBMIT BUTTON */}
           <View style={mobile ? styles.mobSubmitBtn : styles.webSubmitBtn}>
             <SubmitButton value='Submit' onPress={handleSubmit} />
           </View>
-        </KeyboardAvoidingView>      
+        </KeyboardAvoidingView>
       </Container>
     </View>
   );

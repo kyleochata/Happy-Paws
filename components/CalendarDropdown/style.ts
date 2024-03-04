@@ -4,8 +4,7 @@ import { FiraSans } from '../../utils/fonts';
 
 const styles = StyleSheet.create({
   calendar: {
-    width: '100%',
-    minWidth: '100%',
+    width: 'auto',
     backgroundColor: colors.lavender,
     height: 44,
     borderRadius: 10,

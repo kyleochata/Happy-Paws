@@ -31,9 +31,14 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     backgroundColor: colors.lightPurple,
   },
-  radioLabel: {
+  webRadioLabel: {
     fontFamily: 'Montserrat-Medium',
     fontSize: 26,
+    color: colors.black,
+  },
+  mobRadioLabel: {
+    fontFamily: 'Montserrat-Medium',
+    fontSize: 20,
     color: colors.black,
   },
   webFormLabel: {

@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { Platform, View, TouchableOpacity, Text } from 'react-native';
 import styles from './style';
 
 export interface RadioOption {
@@ -15,6 +14,8 @@ interface RadioButtonProps {
 };
 
 const RadioButton = ({ label, value, selected, onSelect }: RadioButtonProps) => {
+  const mobile = Platform.OS !== 'web';
+
   return (
     <View>
       <TouchableOpacity
@@ -24,7 +25,7 @@ const RadioButton = ({ label, value, selected, onSelect }: RadioButtonProps) => 
         <View style={[styles.radioOuter, selected && styles.radioSelected]}>
           {selected && <View style={styles.radioInner} />}
         </View>
-        <Text style={styles.radioLabel}>{label}</Text>
+        <Text style={mobile ? styles.mobRadioLabel : styles.webRadioLabel}>{label}</Text>
       </TouchableOpacity>
     </View>
   );

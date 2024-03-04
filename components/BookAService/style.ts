@@ -3,6 +3,7 @@ import { colors } from '../../utils/constants';
 
 const styles = StyleSheet.create({
   mobWrapper: {
+    width: '100%',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
@@ -11,8 +12,8 @@ const styles = StyleSheet.create({
   },
   mobH1: {
     color: colors.darkPurple,
-    fontSize: 24,
-    fontFamily: 'Montserrat-Bold',
+    fontSize: 36,
+    fontFamily: 'Montserrat-SemiBold',
     textAlign: 'center',
     marginBottom: 14,
   },
@@ -25,9 +26,26 @@ const styles = StyleSheet.create({
   },
   mobFormWrap: {
     width: '100%',
+    height: 'auto',
+    backgroundColor: colors.white,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
+    borderRadius: 10,
+    shadowColor: colors.black,
+    shadowOffset: {
+      width: 2,
+      height: 1.5,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+    marginTop: 100,
+    paddingTop: 42,
+    paddingRight: 24,
+    paddingLeft: 24,
+    // paddingBottom: 42, WHY ISN'T THIS WORKING?? OH WELL.
+    marginBottom: 42,
   },
   mobForm: {
     display: 'flex',
@@ -36,13 +54,14 @@ const styles = StyleSheet.create({
   },
   mobFormLabel: {
     color: colors.black,
-    fontFamily: 'Montserrat-Medium',
-    fontSize: 24,
+    fontFamily: 'Montserrat-SemiBold',
+    fontSize: 26,
     marginBottom: 5,
   },
   mobRadioBtnForm: {
     width: '100%',
-    maxWidth: 500,
+    maxWidth: 400,
+    marginBottom: 28,
   },
   mobRadioBtnFormWrap: {
     width: '100%',
@@ -51,21 +70,24 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'center',
     gap: 20,
+    marginBottom: 20,
   },
   mobServices: {
     width: '100%',
+    maxWidth: 400,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    gap: 15,
+    gap: 10,
+    marginBottom: 33,
   },
   mobSubmitBtn: {
     width: '100%',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingTop: 25,
+    paddingBottom: 42,
   },
 
   webWrapper: {
@@ -170,49 +192,11 @@ const styles = StyleSheet.create({
     paddingTop: 33,
   },
 
-  calendar: {
-    width: '100%',
-    minWidth: '100%',
-    backgroundColor: colors.lavender,
-    height: 44,
-    borderRadius: 10,
+  dateRangeWrapper: {
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     alignItems: 'center',
-  },
-  calendarIcon: {
-    paddingTop: 8,
-    paddingRight: 10,
-    paddingBottom: 8,
-    paddingLeft: 10,
-  },
-  date: {
-    fontFamily: 'Montserrat-Medium',
-    fontSize: 20,
-    color: colors.black,
-    paddingTop: 8,
-    paddingRight: 10,
-    paddingBottom: 8,
-    paddingLeft: 10,
-  },
-  calendarDropdown: {
-    zIndex: 99,
-    width: 339,
-    height: 375,
-    borderRadius: 10,
-    position: 'absolute',
-    marginTop: 30,
-    top: 0,
-    left: -200,
-    shadowColor: colors.black,
-    shadowOffset: {
-      width: 2,
-      height: 1.5,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
   },
 });
 

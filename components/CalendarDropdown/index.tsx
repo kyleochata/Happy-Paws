@@ -24,7 +24,9 @@ const CalendarDropdown = () => {
           <MaterialCommunityIcons name="calendar-month" size={27} color={colors.grey} style={styles.calendarIcon} />
           <Divider orientation='vertical' />
           <View>
-            <Text style={styles.date}>01/01/2024</Text>
+            <Text style={styles.date}>
+              01/01/2024{/* TO DO: RENDER DATE BASED ON SELECTION */}
+            </Text>
           </View>
         </View>
       </TouchableOpacity>
