@@ -192,11 +192,20 @@ const styles = StyleSheet.create({
     paddingTop: 33,
   },
 
+  mobDateWrap: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    gap: 20,
+  },
   dateRangeWrapper: {
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexWrap: 'wrap',
+    justifyContent: 'flex-start',
     alignItems: 'center',
+    gap: 10,
   },
 });
 

@@ -133,7 +133,7 @@ const BookAService = () => {
                 </View>
 
                 {/* DATE & CALENDAR SECTION */}
-                <View style={styles.mobRadioBtnFormWrap}>
+                <View style={styles.mobDateWrap}>
                   {selectedBoardingOption ? (
                     <Text style={styles.mobFormLabel}>Dates:</Text>
                   ) : (
