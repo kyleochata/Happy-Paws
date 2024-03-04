@@ -1,16 +1,14 @@
 import { useState } from 'react';
-import { Platform, View, Text, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
-import { Calendar } from 'react-native-calendars';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Platform, View, Text, KeyboardAvoidingView } from 'react-native';
 
 import styles from './style';
+import { useServiceForm } from '../../utils/hooks';
+import CalendarDropdown from '../CalendarDropdown';
 import Container from '../Container';
-import SubmitButton from '../Buttons/SubmitButton';
-import { RadioOption } from '../Buttons/RadioButton/RadioButton';
 import Divider from '../Divider';
 import Form from '../Form';
-import { useServiceForm } from '../../utils/hooks';
-import { colors } from '../../utils/constants';
+import SubmitButton from '../Buttons/SubmitButton';
+import { RadioOption } from '../Buttons/RadioButton/RadioButton';
 import RadioButtonGroup from '../Buttons/RadioButton/RadioButtonGroup';
 
 const BookAService = () => {
@@ -57,10 +55,6 @@ const BookAService = () => {
     { label: 'Yes', value: 'yes' },
     { label: 'No', value: 'no' },
   ];
-
-  // DATE PICKER
-  const [openCalendar, setOpenCalendar] = useState<boolean>(false);
-  const handleOnPress = () => setOpenCalendar(!openCalendar);
 
   return (
     <View style={mobile ? styles.mobWrapper : styles.webWrapper}>
@@ -144,37 +138,7 @@ const BookAService = () => {
             {/* DATE & CALENDAR SECTION */}
             <View style={mobile ? styles.mobRadioBtnFormWrap : styles.webRadioBtnFormWrap}>
               <Text style={mobile ? styles.mobFormLabel : styles.webFormLabel}>Date:</Text>
-              <TouchableOpacity onPress={handleOnPress}>
-                <View style={styles.calendar}>
-                  <MaterialCommunityIcons name="calendar-month" size={27} color={colors.grey} style={styles.calendarIcon} />
-                  <Divider orientation='vertical' />
-                  <View>
-                    <Text style={styles.date}>01/01/2024</Text>
-                  </View>
-                </View>
-              </TouchableOpacity>
-
-              {openCalendar && (
-                <Calendar
-                  onDayPress={(day) => console.log(day)}
-                  monthFormat={'MMM yyyy'}
-                  hideExtraDays={true}
-                  disableMonthChange={false}
-                  firstDay={1}
-                  onPressArrowLeft={subtractMonth => subtractMonth()}
-                  onPressArrowRight={addMonth => addMonth()}
-                  style={styles.calendarDropdown}
-                  theme={{
-                    backgroundColor: '#F3F0F7',
-                    calendarBackground: '#F3F0F7',
-                    selectedDayBackgroundColor: colors.darkPurple,
-                    selectedDayTextColor: colors.white,
-                    todayTextColor: colors.lightPurple,
-                    dayTextColor: '#2d4150',
-                    textDisabledColor: '#d9e'
-                  }}
-                />
-              )}
+              <CalendarDropdown />
             </View>
           </View>
 

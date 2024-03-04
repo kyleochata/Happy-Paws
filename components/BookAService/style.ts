@@ -173,8 +173,8 @@ const styles = StyleSheet.create({
   calendar: {
     width: '100%',
     minWidth: '100%',
-    height: 44,
     backgroundColor: colors.lavender,
+    height: 44,
     borderRadius: 10,
     display: 'flex',
     flexDirection: 'row',
@@ -197,8 +197,10 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
   },
   calendarDropdown: {
+    zIndex: 99,
     width: 339,
     height: 375,
+    borderRadius: 10,
     position: 'absolute',
     marginTop: 30,
     top: 0,
