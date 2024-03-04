@@ -1,6 +1,10 @@
-import { View, Text, Button, FlatList } from 'react-native'
+import React from 'react'
+import { Platform, ScrollView } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
+import BookAService from '../components/BookAService'
+import styles from '../utils/constants'
 
 const ServicesScreen = () => {
   const navigation = useNavigation<any>()
@@ -20,18 +24,16 @@ const ServicesScreen = () => {
     }
   }
   return (
-    <FlatList
-      data={data}
-      renderItem={renderItem}
-      keyExtractor={(item) => item.id}
-      contentContainerStyle={{
-        justifyContent: 'flex-start',
-        alignItems: 'stretch',
-        flex: 1,
-        width: '100%',
-        backgroundColor: 'white',
-      }}
-    />
+    <ScrollView
+      contentContainerStyle={
+        Platform.OS === 'web' ? styles.webHomeView : styles.mobileHomeView
+      }
+      scrollEnabled={true}
+    >
+      <Header />
+      <BookAService />
+      <Footer />
+    </ScrollView>
   )
 }
 

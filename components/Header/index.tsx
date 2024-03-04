@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import {
   View,
-  Text,
   Image,
   Pressable,
   Platform,
@@ -9,7 +8,9 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native'
 import { Link } from '@react-navigation/native'
+import { Ionicons } from '@expo/vector-icons'
 import styles from './style'
+import { colors } from '../../utils/constants'
 import Container from '../Container'
 import BookBtnLight from '../Buttons/BookNow/BookBtnLight'
 
@@ -31,9 +32,13 @@ const Header = () => {
         {mobile ? (
           <View style={styles.mobileHeaderMenu}>
             <Pressable style={styles.modalMenuBtn} onPress={toggle}>
-              <Text style={styles.modalMenuBtnText}>
-                {modalVisible ? '' : '☰'}
-              </Text>
+              <View>
+                {modalVisible ? (
+                  ''
+                ) : (
+                  <Ionicons name="menu" size={40} color={colors.lightPurple} />
+                )}
+              </View>
             </Pressable>
             <Modal
               visible={modalVisible}

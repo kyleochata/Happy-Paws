@@ -1,5 +1,6 @@
 import { Platform, View, Text, Dimensions, Image, FlatList, TouchableOpacity } from 'react-native';
 import { useRef, useState } from 'react';
+import { FontAwesome } from '@expo/vector-icons';
 import { buttonStyles } from '../../utils/constants';
 import styles from './style';
 
@@ -48,7 +49,7 @@ const Carousel = () => {
     <View style={mobile ? styles.mobileCarouselContainer : styles.webCarouselContainer}>
       <TouchableOpacity onPress={onPrev}>
         <View style={buttonStyles.arrowBtn}>
-          <Text style={buttonStyles.bookBtnLTxt}>{'<'}</Text>
+          <FontAwesome name='chevron-left' size={30} color='white' />
         </View>
       </TouchableOpacity>
 
@@ -75,7 +76,7 @@ const Carousel = () => {
 
       <TouchableOpacity onPress={onNext}>
         <View style={buttonStyles.arrowBtn}>
-          <Text style={buttonStyles.bookBtnLTxt}>{'>'}</Text>
+          <FontAwesome name='chevron-right' size={30} color='white' />
         </View>
       </TouchableOpacity>
     </View>
