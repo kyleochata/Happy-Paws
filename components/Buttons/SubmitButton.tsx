@@ -2,12 +2,12 @@ import { Text, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { buttonStyles as styles } from '../../utils/constants';
 
-type BtnDarkProps = {
+type SubmitButtonProps = {
   value: string;
   onPress: () => void;
 };
 
-const BtnDark = ({ value }: BtnDarkProps) => {
+const SubmitButton = ({ value }: SubmitButtonProps) => {
   const navigation = useNavigation<any>();
 
   return (
@@ -19,4 +19,4 @@ const BtnDark = ({ value }: BtnDarkProps) => {
   );
 };
 
-export default BtnDark;
+export default SubmitButton;

@@ -1,46 +1,12 @@
-import { useState } from 'react';
 import { Platform, View, Text, TextInput, Image, KeyboardAvoidingView } from 'react-native';
 import styles from './style';
-import BtnDark from '../Buttons/BtnDark';
+import SubmitButton from '../Buttons/SubmitButton';
 import Form from '../Form';
-
-interface FormData {
-  name: string;
-  email: string;
-  phone: string;
-  message: string;
-};
+import { useServiceForm } from '../../utils/hooks';
 
 const Contact = () => {
   const mobile = Platform.OS !== 'web';
-  // WILL GO BACK TO FIX CONTACT FORM
-  const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-  });
-  
-  const handleChange = (name: any, value: any) => {
-    setFormData({ ...formData, [name]: value });
-  };
-  
-  const handleSubmit = () => {
-    console.log('Your message has been submitted!', formData);
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      message: '',
-    })
-  };
-
-  const inputs = [
-    { name: 'name', label: 'Name', value: formData.name },
-    { name: 'email', label: 'Email', value: formData.email },
-    { name: 'phone', label: 'Phone Number', value: formData.phone },
-    { name: 'message', label: 'Message', value: formData.message, multiline: true }
-  ];
+  const { inputs, handleChange, handleSubmit } = useServiceForm();
 
   return (
     <View style={mobile ? styles.mobileContactWrapper : styles.webContactWrapper}>
@@ -51,14 +17,14 @@ const Contact = () => {
       <KeyboardAvoidingView style={mobile ? styles.mobileContactFormWrap : styles.webContactFormWrap}>
         <View style={mobile ? styles.mobileContactForm : styles.webContactForm}>
           <Form
-              inputs={inputs}
-              handleChange={handleChange}
-              mobile={mobile}
-              handleSubmit={handleSubmit}
-            />
+            inputs={inputs}
+            handleChange={handleChange}
+            mobile={mobile}
+            handleSubmit={handleSubmit}
+          />
 
           <View style={mobile ? styles.mobileSubmitBtn : styles.webSubmitBtn}>
-            <BtnDark value='Submit' onPress={handleSubmit} />
+            <SubmitButton value='Submit' onPress={handleSubmit} />
           </View>
         </View>
         

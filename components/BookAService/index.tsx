@@ -3,83 +3,55 @@ import { Platform, View, Text, TextInput, Image, TouchableOpacity, KeyboardAvoid
 import { Calendar } from 'react-native-calendars';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-import Container from '../Container';
-import BtnDark from '../Buttons/BtnDark';
 import styles from './style';
+import Container from '../Container';
+import SubmitButton from '../Buttons/SubmitButton';
 import RadioButton, { RadioOption } from '../Buttons/RadioButton/RadioButton';
 import Divider from '../Divider';
-import { colors } from '../../utils/constants';
 import Form from '../Form';
-
-interface FormData {
-  name: string;
-  email: string;
-  phone: string;
-  message: string;
-};
+import { useServiceForm } from '../../utils/hooks';
+import { colors } from '../../utils/constants';
 
 const BookAService = () => {
   const mobile = Platform.OS !== 'web';
-  // WILL GO BACK TO FIX CONTACT FORM
-  const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-  });
-  
-  const handleChange = (name: any, value: any) => {
-    setFormData({ ...formData, [name]: value });
-  };
-  
-  const handleSubmit = () => {
-    console.log('Your message has been submitted!', formData);
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      message: '',
-    })
-  };
-
-  const inputs = [
-    { name: 'name', label: 'Name', value: formData.name },
-    { name: 'email', label: 'Email', value: formData.email },
-    { name: 'phone', label: 'Phone Number', value: formData.phone },
-    { name: 'message', label: 'Message', value: formData.message, multiline: true }
-  ];
+  const { inputs, handleChange, handleSubmit } = useServiceForm();
 
   // RADIO BUTTON
-  const [selectedValue, setSelectedValue] = useState('cat');
+  const [selectedPetType, setSelectedPetType] = useState<string>('');
   const petTypeOptions: RadioOption[] = [
     { label: 'Cat', value: 'cat' },
     { label: 'Dog', value: 'dog' },
   ];
 
+  const [selectedBoardingOption, setSelectedBoardingOption] = useState<string>('');
   const boardingOptions: RadioOption[] = [
     { label: 'Standard', value: 'standardBoarding' },
     { label: 'Deluxe', value: 'deluxeBoarding' },
     { label: 'Luxury', value: 'luxuryBoarding' },
   ];
 
+  const [selectedDaycare, setSelectedDaycare] = useState<string>('');
   const daycareOptions: RadioOption[] = [
     { label: 'Basic', value: 'basicDaycare' },
     { label: 'Standard', value: 'standardDaycare' },
     { label: 'Premium', value: 'premiumDaycare' },
   ];
 
+  const [selectedGrooming, setSelectedGrooming] = useState<string>('');
   const groomingOptions: RadioOption[] = [
     { label: 'Basic', value: 'basicGrooming' },
     { label: 'Standard', value: 'standardGrooming' },
     { label: 'Premium', value: 'premiumGrooming' },
   ];
 
+  const [selectedTraining, setSelectedTraining] = useState<string>('');
   const trainingOptions: RadioOption[] = [
     { label: 'Basic', value: 'basicTraining' },
     { label: 'Standard', value: 'standardTraining' },
     { label: 'Premium', value: 'premiumTraining' },
   ];
 
+  const [selectedSpNeeds, setSelectedSpNeeds] = useState<string>('');
   const specialNeedsOptions: RadioOption[] = [
     { label: 'Yes', value: 'yes' },
     { label: 'No', value: 'no' },
@@ -117,8 +89,8 @@ const BookAService = () => {
               <Text style={mobile ? styles.mobFormLabel : styles.webFormLabel}>Pet:</Text>
               <RadioButton
                 options={petTypeOptions}
-                selectedOption={selectedValue}
-                onSelect={value => setSelectedValue(value)}
+                selectedOption={selectedPetType}
+                onSelect={value => setSelectedPetType(value)}
               />
             </View>
 
@@ -128,34 +100,38 @@ const BookAService = () => {
               <Text style={mobile ? styles.mobH2 : styles.webH2}>Overnight Boarding</Text>
               <RadioButton
                 options={boardingOptions}
-                selectedOption={selectedValue}
-                onSelect={value => setSelectedValue(value)}
+                selectedOption={selectedBoardingOption}
+                onSelect={value => setSelectedBoardingOption(value)}
               />
               <Divider orientation='horizontal' />
 
               <Text style={mobile ? styles.mobH2 : styles.webH2}>Daycare</Text>
               <RadioButton
                 options={daycareOptions}
-                selectedOption={selectedValue}
-                onSelect={value => setSelectedValue(value)}
+                selectedOption={selectedDaycare}
+                onSelect={value => setSelectedDaycare(value)}
               />
               <Divider orientation='horizontal' />
 
               <Text style={mobile ? styles.mobH2 : styles.webH2}>Grooming</Text>
               <RadioButton
                 options={groomingOptions}
-                selectedOption={selectedValue}
-                onSelect={value => setSelectedValue(value)}
+                selectedOption={selectedGrooming}
+                onSelect={value => setSelectedGrooming(value)}
               />
               <Divider orientation='horizontal' />
   
               {/* IF CAT IS SELECTED, HIDE TRAINING SECTION */}
-              <Text style={mobile ? styles.mobH2 : styles.webH2}>Training</Text>
-              <RadioButton
-                options={trainingOptions}
-                selectedOption={selectedValue}
-                onSelect={value => setSelectedValue(value)}
-              />
+              {selectedPetType === 'cat' ? '' : (
+                <>
+                  <Text style={mobile ? styles.mobH2 : styles.webH2}>Training</Text>
+                  <RadioButton
+                    options={trainingOptions}
+                    selectedOption={selectedTraining}
+                    onSelect={value => setSelectedTraining(value)}
+                  />
+                </>
+              )}
             </View>
             
             {/* SPECIAL NEEDS SECTION */}
@@ -163,8 +139,8 @@ const BookAService = () => {
               <Text style={mobile ? styles.mobFormLabel : styles.webFormLabel}>Special Needs:</Text>
               <RadioButton
                 options={specialNeedsOptions}
-                selectedOption={selectedValue}
-                onSelect={value => setSelectedValue(value)}
+                selectedOption={selectedSpNeeds}
+                onSelect={value => setSelectedSpNeeds(value)}
               />
             </View>
 
@@ -207,7 +183,7 @@ const BookAService = () => {
 
           {/* SUBMIT BUTTON */}
           <View style={mobile ? styles.mobSubmitBtn : styles.webSubmitBtn}>
-            <BtnDark value='Submit' onPress={handleSubmit} />
+            <SubmitButton value='Submit' onPress={handleSubmit} />
           </View>
         </KeyboardAvoidingView>      
       </Container>
