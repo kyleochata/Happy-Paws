@@ -1,5 +1,4 @@
 import { StyleSheet } from 'react-native';
-import { Montserrat } from '../../utils/fonts';
 import { colors } from '../../utils/constants';
 
 const styles = StyleSheet.create({
@@ -40,34 +39,6 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
-  },
-  mobileContactFormLabel: {
-    color: colors.black,
-    fontFamily: 'Montserrat-Medium',
-    fontSize: 24,
-    marginBottom: 5,
-  },
-  mobileContactInput: {
-    backgroundColor: colors.lavender,
-    borderRadius: 10,
-    width: '100%',
-    maxWidth: 420,
-    height: 43,
-    paddingLeft: 15,
-    paddingRight: 15,
-    marginBottom: 10,
-  },
-  mobileContactTextArea: {
-    backgroundColor: colors.lavender,
-    borderRadius: 10,
-    width: '100%',
-    maxWidth: 600,
-    height: 207,
-    paddingLeft: 15,
-    paddingRight: 15,
-    paddingTop: 15,
-    paddingBottom: 15,
-    verticalAlign: 'top',
   },
   mobileSubmitBtn: {
     width: '100%',
@@ -140,34 +111,6 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
-  },
-  webContactFormLabel: {
-    color: colors.black,
-    fontFamily: 'Montserrat-Medium',
-    fontSize: 30,
-    marginBottom: 5,
-  },
-  webContactInput: {
-    backgroundColor: colors.lavender,
-    borderRadius: 10,
-    width: '100%',
-    maxWidth: 600,
-    height: 45,
-    paddingLeft: 15,
-    paddingRight: 15,
-    marginBottom: 10,
-  },
-  webContactTextArea: {
-    backgroundColor: colors.lavender,
-    borderRadius: 10,
-    width: '100%',
-    maxWidth: 600,
-    height: 274,
-    paddingLeft: 15,
-    paddingRight: 15,
-    paddingTop: 15,
-    paddingBottom: 15,
-    verticalAlign: 'top',
   },
   webSubmitBtn: {
     width: '100%',

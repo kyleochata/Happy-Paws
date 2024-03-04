@@ -1,16 +1,17 @@
 import { useState } from 'react';
-import { Platform, View, Text, TextInput, Image, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
+import { Platform, View, Text, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
 import { Calendar } from 'react-native-calendars';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import styles from './style';
 import Container from '../Container';
 import SubmitButton from '../Buttons/SubmitButton';
-import RadioButton, { RadioOption } from '../Buttons/RadioButton/RadioButton';
+import { RadioOption } from '../Buttons/RadioButton/RadioButton';
 import Divider from '../Divider';
 import Form from '../Form';
 import { useServiceForm } from '../../utils/hooks';
 import { colors } from '../../utils/constants';
+import RadioButtonGroup from '../Buttons/RadioButton/RadioButtonGroup';
 
 const BookAService = () => {
   const mobile = Platform.OS !== 'web';
@@ -64,7 +65,7 @@ const BookAService = () => {
   return (
     <View style={mobile ? styles.mobWrapper : styles.webWrapper}>
       <Container>
-        {/* CONTACT FORM */}
+        {/* v PREVENT KEYBOARD FROM COVERING INPUT BOXES */}
         <KeyboardAvoidingView
           behavior='padding'
           keyboardVerticalOffset={Platform.OS === 'ios' ? 100 : 0}
@@ -87,7 +88,8 @@ const BookAService = () => {
             {/* PET TYPE */}
             <View style={mobile ? styles.mobRadioBtnFormWrap : styles.webRadioBtnFormWrap}>
               <Text style={mobile ? styles.mobFormLabel : styles.webFormLabel}>Pet:</Text>
-              <RadioButton
+              <RadioButtonGroup
+                label='Pet:'
                 options={petTypeOptions}
                 selectedOption={selectedPetType}
                 onSelect={value => setSelectedPetType(value)}
@@ -97,51 +99,46 @@ const BookAService = () => {
             {/* SERVICES SECTION */}
             <Text style={mobile ? styles.mobFormLabel  : styles.webFormLabel }>Services:</Text>
             <View style={mobile ? styles.mobServices : styles.webServices}>
-              <Text style={mobile ? styles.mobH2 : styles.webH2}>Overnight Boarding</Text>
-              <RadioButton
+              <RadioButtonGroup
+                label='Overnight Boarding'
                 options={boardingOptions}
                 selectedOption={selectedBoardingOption}
                 onSelect={value => setSelectedBoardingOption(value)}
               />
               <Divider orientation='horizontal' />
-
-              <Text style={mobile ? styles.mobH2 : styles.webH2}>Daycare</Text>
-              <RadioButton
+              <RadioButtonGroup
+                label='Daycare'
                 options={daycareOptions}
                 selectedOption={selectedDaycare}
                 onSelect={value => setSelectedDaycare(value)}
               />
               <Divider orientation='horizontal' />
-
-              <Text style={mobile ? styles.mobH2 : styles.webH2}>Grooming</Text>
-              <RadioButton
+              <RadioButtonGroup
+                label='Grooming'
                 options={groomingOptions}
                 selectedOption={selectedGrooming}
                 onSelect={value => setSelectedGrooming(value)}
               />
               <Divider orientation='horizontal' />
-  
               {/* IF CAT IS SELECTED, HIDE TRAINING SECTION */}
               {selectedPetType === 'cat' ? '' : (
-                <>
-                  <Text style={mobile ? styles.mobH2 : styles.webH2}>Training</Text>
-                  <RadioButton
-                    options={trainingOptions}
-                    selectedOption={selectedTraining}
-                    onSelect={value => setSelectedTraining(value)}
-                  />
-                </>
+                <RadioButtonGroup
+                  label='Training'
+                  options={trainingOptions}
+                  selectedOption={selectedTraining}
+                  onSelect={value => setSelectedTraining(value)}
+                />
               )}
             </View>
-            
             {/* SPECIAL NEEDS SECTION */}
             <View style={mobile ? styles.mobRadioBtnFormWrap : styles.webRadioBtnFormWrap}>
               <Text style={mobile ? styles.mobFormLabel : styles.webFormLabel}>Special Needs:</Text>
-              <RadioButton
-                options={specialNeedsOptions}
-                selectedOption={selectedSpNeeds}
-                onSelect={value => setSelectedSpNeeds(value)}
-              />
+                <RadioButtonGroup
+                  label='Special Needs:'
+                  options={specialNeedsOptions}
+                  selectedOption={selectedSpNeeds}
+                  onSelect={value => setSelectedSpNeeds(value)}
+                />
             </View>
 
             {/* DATE & CALENDAR SECTION */}
@@ -170,9 +167,9 @@ const BookAService = () => {
                   theme={{
                     backgroundColor: '#F3F0F7',
                     calendarBackground: '#F3F0F7',
-                    selectedDayBackgroundColor: '#00adf5',
-                    selectedDayTextColor: '#ffffff',
-                    todayTextColor: '#00adf5',
+                    selectedDayBackgroundColor: colors.darkPurple,
+                    selectedDayTextColor: colors.white,
+                    todayTextColor: colors.lightPurple,
                     dayTextColor: '#2d4150',
                     textDisabledColor: '#d9e'
                   }}

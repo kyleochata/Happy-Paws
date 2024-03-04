@@ -24,9 +24,9 @@ export const useServiceForm = () => {
   };
 
   const inputs: Input[] = [
-    { name: 'name', label: 'Name', value: formData.name, multiline: false },
-    { name: 'email', label: 'Email', value: formData.email, multiline: false },
-    { name: 'phone', label: 'Phone Number', value: formData.phone, multiline: false },
+    { name: 'name', label: 'Name', value: formData.name },
+    { name: 'email', label: 'Email', value: formData.email },
+    { name: 'phone', label: 'Phone Number', value: formData.phone },
     { name: 'message', label: 'Message', value: formData.message, multiline: true, numberOfLines: 4 },
   ];
 

@@ -36,6 +36,16 @@ const styles = StyleSheet.create({
     fontSize: 26,
     color: colors.black,
   },
+  webFormLabel: {
+    color: colors.black,
+    fontSize: 26,
+    fontFamily: 'Montserrat-Medium',
+  },
+  mobFormLabel: {
+    color: colors.black,
+    fontSize: 26,
+    fontFamily: 'Montserrat-Medium',
+  },
 });
 
 export default styles;

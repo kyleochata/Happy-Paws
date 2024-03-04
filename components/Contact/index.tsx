@@ -1,4 +1,4 @@
-import { Platform, View, Text, TextInput, Image, KeyboardAvoidingView } from 'react-native';
+import { Platform, View, Text, Image, KeyboardAvoidingView } from 'react-native';
 import styles from './style';
 import SubmitButton from '../Buttons/SubmitButton';
 import Form from '../Form';
@@ -14,7 +14,12 @@ const Contact = () => {
       <Text style={mobile ? styles.mobileContactH2 : styles.webContactH2}>Don't hesitate to reach out to us. Our team is here to help!</Text>
 
       {/* CONTACT FORM */}
-      <KeyboardAvoidingView style={mobile ? styles.mobileContactFormWrap : styles.webContactFormWrap}>
+      {/* v PREVENT KEYBOARD FROM COVERING INPUT BOXES */}
+      <KeyboardAvoidingView
+        behavior='padding'
+        keyboardVerticalOffset={Platform.OS === 'ios' ? 100 : 0}
+        style={mobile ? styles.mobileContactFormWrap : styles.webContactFormWrap}
+      >
         <View style={mobile ? styles.mobileContactForm : styles.webContactForm}>
           <Form
             inputs={inputs}
