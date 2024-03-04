@@ -6,6 +6,7 @@ const ValueBannerStyles = StyleSheet.create({
   wVB: {
     backgroundColor: colors.lightPurple,
     minWidth: '100%',
+    alignSelf: 'stretch',
     justifyContent: 'center',
     alignItems: 'center',
   },
