@@ -4,10 +4,10 @@ import { useState } from 'react';
 import SubmitButton from '../Buttons/SubmitButton';
 
 export interface Input {
-  name: string;
-  label: string;
-  value: string;
-  multiline?: boolean;
+  name: string
+  label: string
+  value: string
+  multiline?: boolean
   numberOfLines?: number
 };
 
@@ -67,7 +67,7 @@ const Form = ({ formData, inputs, handleChange, handleSubmit, mobile }: FormProp
         </TouchableOpacity>
       </View>
     </>
-  );
-};
+  )
+}
 
-export default Form;
+export default Form

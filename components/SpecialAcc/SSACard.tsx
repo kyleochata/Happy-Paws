@@ -7,12 +7,12 @@ export interface HSCardProps {
   description: string
 }
 
-const HSCard = ({ title, img, description }: HSCardProps) => {
+const SSACard = ({ title, img, description }: HSCardProps) => {
   return (
-    <View style={Platform.OS === 'web' ? styles.wHSCard : styles.mHSCard}>
+    <View style={Platform.OS === 'web' ? styles.wSSACard : styles.mHSCard}>
       {Platform.OS === 'web' ? (
         <>
-          <Text style={styles.wHSTitle}>{title}</Text>
+          <Text style={styles.wSSATitle}>{title}</Text>
           <Image source={img} style={styles.wHSImg} />
           <Text style={styles.wHSText}>{description}</Text>
         </>
@@ -28,4 +28,4 @@ const HSCard = ({ title, img, description }: HSCardProps) => {
     </View>
   )
 }
-export default HSCard
+export default SSACard
