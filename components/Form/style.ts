@@ -80,6 +80,42 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingTop: 33,
   },
+
+  modal: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: 30,
+    backgroundColor: 'rgba(0, 0, 0, 0.75)',
+  },
+  modalContainer: {
+    width: 500,
+    maxHeight: 300,
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: 20,
+    backgroundColor: colors.white,
+    borderRadius: 15,
+    shadowColor: colors.black,
+    shadowOffset: {
+      width: 2,
+      height: 1.5,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  modalH1: {
+    color: colors.black,
+    fontFamily: 'Montserrat-Bold',
+    fontSize: 26,
+  },
+  modalText: {
+    color: colors.black,
+    fontFamily: 'Montserrat-Bold',
+    fontSize: 26,
+  },
 });
 
 export default styles;

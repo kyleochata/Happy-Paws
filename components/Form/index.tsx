@@ -37,12 +37,18 @@ const Form = ({ formData, inputs, handleChange, handleSubmit, mobile }: FormProp
     <>
       {showSuccessModal && (
         <View>
-          <Modal visible={showSuccessModal} animationType="slide" transparent>
-            <View>
-              <Text>Form submitted successfully!</Text>
-              <TouchableOpacity onPress={() => setShowSuccessModal(false)}>
-                <Text>Close</Text>
-              </TouchableOpacity>
+          <Modal
+            visible={showSuccessModal}
+            animationType="slide"
+            transparent
+          >
+            <View style={styles.modal}>
+              <View style={styles.modalContainer}>
+                <Text style={styles.modalH1}>Form submitted successfully!</Text>
+                <TouchableOpacity onPress={() => setShowSuccessModal(false)}>
+                  <SubmitButton value='Close' />
+                </TouchableOpacity>
+              </View>
             </View>
           </Modal>
         </View>

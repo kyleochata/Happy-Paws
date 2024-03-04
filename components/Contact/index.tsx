@@ -1,6 +1,5 @@
-import { Platform, View, Text, Image, KeyboardAvoidingView, Alert } from 'react-native';
+import { Platform, View, Text, Image, KeyboardAvoidingView } from 'react-native';
 import styles from './style';
-import SubmitButton from '../Buttons/SubmitButton';
 import Form from '../Form';
 import { useServiceForm } from '../../utils/hooks';
 

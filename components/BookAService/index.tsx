@@ -8,7 +8,6 @@ import CalendarDropdown from '../CalendarDropdown';
 import Container from '../Container';
 import Divider from '../Divider';
 import Form from '../Form';
-import SubmitButton from '../Buttons/SubmitButton';
 import { RadioOption } from '../Buttons/RadioButton/RadioButton';
 import RadioButtonGroup from '../Buttons/RadioButton/RadioButtonGroup';
 
@@ -55,18 +54,6 @@ const BookAService = () => {
     { label: 'Yes', value: 'yes' },
     { label: 'No', value: 'no' },
   ];
-  
-  const handleFormSubmit = () => {
-    // Email validation
-    const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if (!emailRegex.test(formData.email)) {
-      Alert.alert('Invalid Email', 'Please enter a valid email address.');
-      return;
-    }
-  
-    handleSubmit();
-    Alert.alert('Success', 'Form submitted successfully!');
-  };
 
   const renderServicesSection = () => (
     <>
@@ -170,7 +157,7 @@ const BookAService = () => {
                   inputs={inputs}
                   handleChange={handleChange}
                   mobile={mobile}
-                  handleSubmit={handleFormSubmit}
+                  handleSubmit={handleSubmit}
                 />
               </View>
             </>
@@ -183,7 +170,7 @@ const BookAService = () => {
                   inputs={inputs}
                   handleChange={handleChange}
                   mobile={mobile}
-                  handleSubmit={handleFormSubmit}
+                  handleSubmit={handleSubmit}
                 />
               </View>
 
@@ -234,7 +221,7 @@ const BookAService = () => {
             </>
           )}
 
-          {/* SUBMIT BUTTON */}
+          {/* SUBMIT BUTTON HERE */}
           {/* <View style={mobile ? styles.mobSubmitBtn : styles.webSubmitBtn}>
             <SubmitButton value='Submit' onPress={handleFormSubmit} />
           </View> */}
