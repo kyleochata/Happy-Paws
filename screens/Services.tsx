@@ -64,4 +64,4 @@ const ServicesScreen = () => {
   )
 }
 
-export default ServicesScreen;
+export default ServicesScreen

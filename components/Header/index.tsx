@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import {
   View,
- 
   Image,
   Pressable,
   Platform,
@@ -34,7 +33,11 @@ const Header = () => {
           <View style={styles.mobileHeaderMenu}>
             <Pressable style={styles.modalMenuBtn} onPress={toggle}>
               <View>
-                {modalVisible ? '' : <Ionicons name="menu" size={40} color={colors.lightPurple} />}
+                {modalVisible ? (
+                  ''
+                ) : (
+                  <Ionicons name="menu" size={40} color={colors.lightPurple} />
+                )}
               </View>
             </Pressable>
             <Modal

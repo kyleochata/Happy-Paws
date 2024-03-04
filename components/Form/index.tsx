@@ -3,6 +3,7 @@ import styles from './style';
 import { useState } from 'react';
 import SubmitButton from '../Buttons/SubmitButton';
 
+
 export interface Input {
   name: string
   label: string
