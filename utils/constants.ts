@@ -1,9 +1,11 @@
 import { StyleSheet } from 'react-native'
 
 export const colors = {
+  exLightPurple: '#D9D4DE',
   lavender: '#D6CDE2',
   lightPurple: '#A189C8',
   darkPurple: '#522689',
+  grey: '#787878',
   white: '#ffffff',
   black: '#000000',
 }

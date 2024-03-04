@@ -1,16 +1,26 @@
-import React from 'react'
-import { View, Text, Button } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
+import React from 'react';
+import { Platform, ScrollView } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import BookAService from '../components/BookAService';
+import styles from '../utils/constants';
 
 const ServicesScreen = () => {
   const navigation = useNavigation<any>()
 
   return (
-    <View>
-      <Text>Services Screen</Text>
-      <Button title="Go to Home" onPress={() => navigation.navigate('Home')} />
-    </View>
-  )
-}
+    <ScrollView
+      contentContainerStyle={
+        Platform.OS === 'web' ? styles.webHomeView : styles.mobileHomeView
+      }
+      scrollEnabled={true}
+    >
+      <Header />
+      <BookAService />
+      <Footer />
+    </ScrollView>
+  );
+};
 
-export default ServicesScreen
+export default ServicesScreen;
