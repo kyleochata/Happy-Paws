@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Platform, View, Text, KeyboardAvoidingView } from 'react-native';
+import { Platform, View, Text, KeyboardAvoidingView, Alert } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 
 import styles from './style';
@@ -14,7 +14,7 @@ import RadioButtonGroup from '../Buttons/RadioButton/RadioButtonGroup';
 
 const BookAService = () => {
   const mobile = Platform.OS !== 'web';
-  const { inputs, handleChange, handleSubmit } = useServiceForm();
+  const { formData, inputs, handleChange, handleSubmit } = useServiceForm();
 
   const [selectedPetType, setSelectedPetType] = useState<string>('');
   const petTypeOptions: RadioOption[] = [
@@ -55,6 +55,19 @@ const BookAService = () => {
     { label: 'Yes', value: 'yes' },
     { label: 'No', value: 'no' },
   ];
+  
+  const handleFormSubmit = () => {
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      Alert.alert('Invalid Email', 'Please enter a valid email address.');
+      return;
+    };
+
+    // Other form submission logic
+    handleSubmit();
+    Alert.alert('Success', 'Form submitted successfully!');
+  };
 
   const renderServicesSection = () => (
     <>
@@ -157,7 +170,7 @@ const BookAService = () => {
                   inputs={inputs}
                   handleChange={handleChange}
                   mobile={mobile}
-                  handleSubmit={handleSubmit}
+                  handleSubmit={handleFormSubmit}
                 />
               </View>
             </>
@@ -169,7 +182,7 @@ const BookAService = () => {
                   inputs={inputs}
                   handleChange={handleChange}
                   mobile={mobile}
-                  handleSubmit={handleSubmit}
+                  handleSubmit={handleFormSubmit}
                 />
               </View>
 
@@ -222,7 +235,7 @@ const BookAService = () => {
 
           {/* SUBMIT BUTTON */}
           <View style={mobile ? styles.mobSubmitBtn : styles.webSubmitBtn}>
-            <SubmitButton value='Submit' onPress={handleSubmit} />
+            <SubmitButton value='Submit' onPress={handleFormSubmit} />
           </View>
         </KeyboardAvoidingView>
       </Container>
