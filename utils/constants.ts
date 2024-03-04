@@ -11,15 +11,22 @@ export const colors = {
 const styles = StyleSheet.create({
   mobileHomeView: {
     justifyContent: 'flex-start',
-    alignItems: 'center',
+    alignItems: 'stretch',
     backgroundColor: colors.white,
     flexDirection: 'column',
   },
   webHomeView: {
     width: '100%',
     justifyContent: 'flex-start',
-    alignItems: 'center',
+    alignItems: 'stretch',
+    flexDirection: 'column',
     backgroundColor: colors.white,
+    flexGrow: 1,
+  },
+  stretchCon: {
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 })
 
@@ -31,8 +38,8 @@ export const buttonStyles = StyleSheet.create({
     width: 184,
     height: 50,
     borderRadius: 15,
-    alignItems: 'center', // Center the button horizontally
-    justifyContent: 'center', // Center the button vertically
+    alignItems: 'center',
+    justifyContent: 'center',
     marginVertical: 10,
     marginTop: 10,
     marginBottom: 10,
@@ -114,7 +121,7 @@ export const buttonStyles = StyleSheet.create({
     color: colors.white,
     fontFamily: 'FiraSans-SemiBold',
     fontSize: 20,
-    letterSpacing: 1
+    letterSpacing: 1,
   },
   arrowBtn: {
     backgroundColor: colors.lightPurple,

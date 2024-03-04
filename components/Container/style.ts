@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
     width: '90%',
   },
   webContainer: {
-    width: '100%',
+    width: '90%',
     maxWidth: 1280,
   },
 })
