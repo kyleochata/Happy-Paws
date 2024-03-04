@@ -30,6 +30,13 @@ const styles = StyleSheet.create({
     paddingBottom: 15,
     verticalAlign: 'top',
   },
+  mobSubmitBtn: {
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 25,
+  },
 
   webForm: {
     width: '100%',
@@ -65,6 +72,13 @@ const styles = StyleSheet.create({
     paddingTop: 15,
     paddingBottom: 15,
     verticalAlign: 'top',
+  },
+  webSubmitBtn: {
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 33,
   },
 });
 

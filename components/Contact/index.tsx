@@ -1,4 +1,4 @@
-import { Platform, View, Text, Image, KeyboardAvoidingView } from 'react-native';
+import { Platform, View, Text, Image, KeyboardAvoidingView, Alert } from 'react-native';
 import styles from './style';
 import SubmitButton from '../Buttons/SubmitButton';
 import Form from '../Form';
@@ -6,7 +6,7 @@ import { useServiceForm } from '../../utils/hooks';
 
 const Contact = () => {
   const mobile = Platform.OS !== 'web';
-  const { inputs, handleChange, handleSubmit } = useServiceForm();
+  const { formData, inputs, handleChange, handleSubmit } = useServiceForm();
 
   return (
     <View style={mobile ? styles.mobileContactWrapper : styles.webContactWrapper}>
@@ -22,15 +22,12 @@ const Contact = () => {
       >
         <View style={mobile ? styles.mobileContactForm : styles.webContactForm}>
           <Form
+            formData={formData}
             inputs={inputs}
             handleChange={handleChange}
             mobile={mobile}
             handleSubmit={handleSubmit}
           />
-
-          <View style={mobile ? styles.mobileSubmitBtn : styles.webSubmitBtn}>
-            <SubmitButton value='Submit' onPress={handleSubmit} />
-          </View>
         </View>
         
         <Image

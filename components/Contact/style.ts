@@ -40,13 +40,6 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'flex-start',
   },
-  mobileSubmitBtn: {
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingTop: 25,
-  },
   mobileContactImg: {
     marginTop: 40,
     width: '100%',
@@ -111,13 +104,6 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
-  },
-  webSubmitBtn: {
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingTop: 33,
   },
   webContactImg: {
     width: '100%',

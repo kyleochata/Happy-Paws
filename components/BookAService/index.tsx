@@ -58,13 +58,12 @@ const BookAService = () => {
   
   const handleFormSubmit = () => {
     // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!emailRegex.test(formData.email)) {
       Alert.alert('Invalid Email', 'Please enter a valid email address.');
       return;
-    };
-
-    // Other form submission logic
+    }
+  
     handleSubmit();
     Alert.alert('Success', 'Form submitted successfully!');
   };
@@ -167,6 +166,7 @@ const BookAService = () => {
               {/* USER FORM */}
               <View style={styles.mobForm}>
                 <Form
+                  formData={formData}
                   inputs={inputs}
                   handleChange={handleChange}
                   mobile={mobile}
@@ -179,6 +179,7 @@ const BookAService = () => {
               {/* !! DESKTOP VIEW USER FORM !! */}
               <View style={styles.webForm}>
                 <Form
+                  formData={formData}
                   inputs={inputs}
                   handleChange={handleChange}
                   mobile={mobile}
