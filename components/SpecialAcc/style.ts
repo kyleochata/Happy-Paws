@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
     gap: 30,
-    marginBottom: 10,
+    // marginBottom: 10,
   },
   HSCCon: {
     flexDirection: 'row',
@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     width: '100%',
     gap: 20,
+    margin: 10,
   },
   wHSSTitle: {
     fontFamily: 'Montserrat-SemiBold',
@@ -62,6 +63,7 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: '400',
     textAlign: 'center',
+    marginBottom: 0,
   },
   wSSATBold: {
     fontFamily: FiraSans,
