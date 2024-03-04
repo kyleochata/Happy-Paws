@@ -235,9 +235,9 @@ const BookAService = () => {
           )}
 
           {/* SUBMIT BUTTON */}
-          <View style={mobile ? styles.mobSubmitBtn : styles.webSubmitBtn}>
+          {/* <View style={mobile ? styles.mobSubmitBtn : styles.webSubmitBtn}>
             <SubmitButton value='Submit' onPress={handleFormSubmit} />
-          </View>
+          </View> */}
         </KeyboardAvoidingView>
       </Container>
     </View>
