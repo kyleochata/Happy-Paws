@@ -14,7 +14,7 @@ const RadioButtonGroup = ({ label, options, selectedOption, onSelect }: RadioBut
 
   return (
     <View>
-      {label === 'Pet:' || 'Special Needs:' ? '' : (
+      {(label === 'Pet:' || label === 'Special Needs:') ? null : (
         <Text style={mobile ? styles.mobFormLabel : styles.webFormLabel}>{label}</Text>
       )}
       <View style={styles.container}>
