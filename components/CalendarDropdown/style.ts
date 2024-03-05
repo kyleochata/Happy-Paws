@@ -12,6 +12,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+    position: 'relative',
+    top: 0,
+    left: 0,
   },
   calendarIcon: {
     paddingTop: 8,

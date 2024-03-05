@@ -1,5 +1,8 @@
-import { View, Text, TextInput } from 'react-native'
-import styles from './style'
+import { View, Text, TextInput, TouchableOpacity, Modal } from 'react-native';
+import styles from './style';
+import { useState } from 'react';
+import SubmitButton from '../Buttons/SubmitButton';
+
 
 export interface Input {
   name: string
@@ -7,29 +10,56 @@ export interface Input {
   value: string
   multiline?: boolean
   numberOfLines?: number
-}
+};
 
 interface FormProps {
-  inputs: Input[]
-  handleChange: (name: string, value: string) => void
-  handleSubmit: () => void
-  mobile: boolean
-}
+  formData: any;
+  inputs: Input[];
+  handleChange: (name: string, value: string) => void;
+  handleSubmit: () => void;
+  mobile: boolean;
+};
 
-const Form = ({ inputs, handleChange, mobile }: FormProps) => {
+const Form = ({ formData, inputs, handleChange, handleSubmit, mobile }: FormProps) => {
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+
+  const handleFormSubmit = () => {
+    // Email validation
+    const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (!emailRegex.test(formData.email)) {
+      console.log('Invalid Email', 'Please enter a valid email address.');
+      return;
+    }
+      handleSubmit();
+      setShowSuccessModal(true);
+  };
+  
   return (
     <>
-      {inputs.map((input) => (
+      {showSuccessModal && (
+        <View>
+          <Modal
+            visible={showSuccessModal}
+            animationType="slide"
+            transparent
+          >
+            <View style={styles.modal}>
+              <View style={styles.modalContainer}>
+                <Text style={styles.modalH1}>Form submitted successfully!</Text>
+                <TouchableOpacity onPress={() => setShowSuccessModal(false)}>
+                  <SubmitButton value='Close' />
+                </TouchableOpacity>
+              </View>
+            </View>
+          </Modal>
+        </View>
+      )}
+      {inputs.map((input, i) => (
         <>
-          <Text style={mobile ? styles.mobFormLabel : styles.webFormLabel}>
-            {input.label}
-          </Text>
+          <Text key={i} style={mobile ? styles.mobFormLabel : styles.webFormLabel}>{input.label}</Text>
           <TextInput
-            style={[
-              mobile ? styles.mobInput : styles.webInput,
-              input.multiline &&
-                (mobile ? styles.mobTextArea : styles.webTextArea),
-            ]}
+            key={input.name}
+            style={[mobile ? styles.mobInput : styles.webInput, input.multiline && (mobile ? styles.mobTextArea : styles.webTextArea)]}
             onChangeText={(value) => handleChange(input.name, value)}
             value={input.value}
             multiline={input.multiline}
@@ -37,6 +67,12 @@ const Form = ({ inputs, handleChange, mobile }: FormProps) => {
           />
         </>
       ))}
+
+      <View style={mobile ? styles.mobSubmitBtn : styles.webSubmitBtn}>
+        <TouchableOpacity onPress={handleFormSubmit}>
+          <SubmitButton value='Submit' />
+        </TouchableOpacity>
+      </View>
     </>
   )
 }

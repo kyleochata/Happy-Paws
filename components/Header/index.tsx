@@ -8,9 +8,9 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native'
 import { Link } from '@react-navigation/native'
-import { Ionicons } from '@expo/vector-icons'
+import { Ionicons } from '@expo/vector-icons';
 import styles from './style'
-import { colors } from '../../utils/constants'
+import { colors } from '../../utils/constants';
 import Container from '../Container'
 import BookBtnLight from '../Buttons/BookNow/BookBtnLight'
 

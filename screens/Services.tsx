@@ -1,5 +1,5 @@
 import React from 'react'
-import { Platform, ScrollView, View, FlatList } from 'react-native'
+import { Platform, View, FlatList } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import Header from '../components/Header'
 import Footer from '../components/Footer'

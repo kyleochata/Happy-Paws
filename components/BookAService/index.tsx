@@ -1,19 +1,19 @@
 import React, { useState } from 'react'
-import { Platform, View, Text, KeyboardAvoidingView } from 'react-native'
+import { Platform, View, Text, KeyboardAvoidingView, Alert } from 'react-native'
 import { AntDesign } from '@expo/vector-icons'
+
 import styles from './style'
 import { useServiceForm } from '../../utils/hooks'
 import CalendarDropdown from '../CalendarDropdown'
 import Container from '../Container'
 import Divider from '../Divider'
 import Form from '../Form'
-import SubmitButton from '../Buttons/SubmitButton'
 import { RadioOption } from '../Buttons/RadioButton/RadioButton'
 import RadioButtonGroup from '../Buttons/RadioButton/RadioButtonGroup'
 
 const BookAService = () => {
   const mobile = Platform.OS !== 'web'
-  const { inputs, handleChange, handleSubmit } = useServiceForm()
+  const { formData, inputs, handleChange, handleSubmit } = useServiceForm()
 
   const [selectedPetType, setSelectedPetType] = useState<string>('')
   const petTypeOptions: RadioOption[] = [
@@ -160,6 +160,7 @@ const BookAService = () => {
               {/* USER FORM */}
               <View style={styles.mobForm}>
                 <Form
+                  formData={formData}
                   inputs={inputs}
                   handleChange={handleChange}
                   mobile={mobile}
@@ -172,6 +173,7 @@ const BookAService = () => {
               {/* !! DESKTOP VIEW USER FORM !! */}
               <View style={styles.webForm}>
                 <Form
+                  formData={formData}
                   inputs={inputs}
                   handleChange={handleChange}
                   mobile={mobile}
@@ -226,10 +228,10 @@ const BookAService = () => {
             </>
           )}
 
-          {/* SUBMIT BUTTON */}
-          <View style={mobile ? styles.mobSubmitBtn : styles.webSubmitBtn}>
-            <SubmitButton value="Submit" onPress={handleSubmit} />
-          </View>
+          {/* SUBMIT BUTTON HERE */}
+          {/* <View style={mobile ? styles.mobSubmitBtn : styles.webSubmitBtn}>
+            <SubmitButton value='Submit' onPress={handleFormSubmit} />
+          </View> */}
         </KeyboardAvoidingView>
       </Container>
     </View>

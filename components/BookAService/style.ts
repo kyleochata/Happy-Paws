@@ -82,13 +82,6 @@ const styles = StyleSheet.create({
     gap: 10,
     marginBottom: 33,
   },
-  mobSubmitBtn: {
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingBottom: 42,
-  },
 
   webWrapper: {
     width: '100%',
@@ -183,13 +176,6 @@ const styles = StyleSheet.create({
     marginBottom: 25,
     paddingLeft: 30,
     paddingRight: 30,
-  },
-  webSubmitBtn: {
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingTop: 33,
   },
 
   mobDateWrap: {
