@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native';
-import { colors } from '../../../utils/constants';
+import { StyleSheet } from 'react-native'
+import { colors } from '../../../utils/constants'
 
 const styles = StyleSheet.create({
   container: {
@@ -51,6 +51,6 @@ const styles = StyleSheet.create({
     fontSize: 26,
     fontFamily: 'Montserrat-Medium',
   },
-});
+})
 
-export default styles;
+export default styles

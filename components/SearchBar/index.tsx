@@ -75,7 +75,7 @@
 // }
 
 // export default SearchBar
-import { View, Text, TouchableOpacity, Modal } from 'react-native'
+import { View, Text, TouchableOpacity, Modal, Platform } from 'react-native'
 import { useState } from 'react'
 import { Input } from 'react-native-elements'
 import { AntDesign, Foundation, Ionicons } from '@expo/vector-icons'
@@ -88,7 +88,8 @@ import FilterModal from './filterModal'
 
 const SearchBar = () => {
   const [inputValue, setInputValue] = useState('')
-  const [showFModal, setShowFModal] = useState(true)
+  const [showFModal, setShowFModal] = useState(false)
+  const web = Platform.OS === 'web'
   const dispatch = useDispatch()
 
   const handleInputChange = (value: string) => {
@@ -110,7 +111,7 @@ const SearchBar = () => {
     <View style={styles.sBContainer}>
       <Container>
         <View style={styles.sBIC}>
-          <View style={styles.sBInputCon}>
+          <View style={web ? styles.sBInputCon : styles.msBInputCon}>
             <Input
               placeholder="Explore our services..."
               leftIcon={
@@ -131,7 +132,7 @@ const SearchBar = () => {
 
           <TouchableOpacity
             style={styles.sBSearch}
-            onPress={handleSearchSubmit} // Corrected onPress to call handleSearchSubmit
+            onPress={handleSearchSubmit}
           >
             <Text style={styles.sBSearchText}>Search</Text>
           </TouchableOpacity>
@@ -162,9 +163,6 @@ const SearchBar = () => {
                     console.log({ showFModal })
                   }}
                 >
-                  <View style={styles.fMBorderArrow}>
-                    <Foundation name="arrow-up" size={24} color="black" />
-                  </View>
                   <FilterModal />
                 </Modal>
               )}
