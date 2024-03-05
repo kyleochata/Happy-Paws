@@ -75,19 +75,20 @@
 // }
 
 // export default SearchBar
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity, Modal } from 'react-native'
 import { useState } from 'react'
 import { Input } from 'react-native-elements'
-import { AntDesign, Ionicons } from '@expo/vector-icons'
+import { AntDesign, Foundation, Ionicons } from '@expo/vector-icons'
 import styles from './style'
 import Container from '../Container'
 import { useDispatch, useSelector } from 'react-redux'
 import { changeSearch } from '../../store/actionCreator'
 import { useSearchSelector } from '../../store/selectors'
+import FilterModal from './filterModal'
 
 const SearchBar = () => {
   const [inputValue, setInputValue] = useState('')
-  const [showFModal, setShowFModal] = useState(false)
+  const [showFModal, setShowFModal] = useState(true)
   const dispatch = useDispatch()
 
   const handleInputChange = (value: string) => {
@@ -136,6 +137,7 @@ const SearchBar = () => {
           </TouchableOpacity>
           <TouchableOpacity
             style={{
+              position: 'relative', // Set position to relative
               justifyContent: 'center',
               alignItems: 'center',
               flexDirection: 'row',
@@ -143,21 +145,30 @@ const SearchBar = () => {
             onPress={handleFModal}
           >
             <Text style={styles.wSBFText}>Filter</Text>
-            {showFModal ? (
-              <AntDesign
-                name="up"
-                size={24}
-                color="white"
-                style={styles.wOFMArrow}
-              />
-            ) : (
-              <AntDesign
-                name="down"
-                size={24}
-                color="white"
-                style={{ margin: 10 }}
-              />
-            )}
+            <AntDesign
+              name={showFModal ? 'up' : 'down'}
+              size={24}
+              color="white"
+              style={styles.wOFMArrow}
+            />
+            <View style={{ position: 'relative' }}>
+              {showFModal && (
+                <Modal
+                  visible={showFModal}
+                  animationType="fade"
+                  transparent={true}
+                  onRequestClose={() => {
+                    setShowFModal(!showFModal)
+                    console.log({ showFModal })
+                  }}
+                >
+                  <View style={styles.fMBorderArrow}>
+                    <Foundation name="arrow-up" size={24} color="black" />
+                  </View>
+                  <FilterModal />
+                </Modal>
+              )}
+            </View>
           </TouchableOpacity>
         </View>
       </Container>
