@@ -1,0 +1,4 @@
+export const CHANGE_PET = 'CHANGE_PET'
+export const CHANGE_PRICE = 'CHANGE_PRICE'
+export const CHANGE_SEARCH = 'CHANGE_SEARCH'
+export const CHANGE_SERVICE = 'CHANGE_SERVICE'

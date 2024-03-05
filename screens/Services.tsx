@@ -7,12 +7,15 @@ import BookAService from '../components/BookAService'
 import styles from '../utils/constants'
 import Container from '../components/Container'
 import SpecialAcc from '../components/SpecialAcc'
-import Services from '../components/Services'
+import SearchBar from '../components/SearchBar'
+import { useSearchSelector } from '../store/selectors'
+import { useSelector } from 'react-redux'
 
 const ServicesScreen = () => {
   const navigation = useNavigation<any>()
   const data = [
     { id: 'header' },
+    { id: 'search' },
     { id: 'services' },
     { id: 'special' },
     { id: 'bookaservice' },
@@ -25,6 +28,12 @@ const ServicesScreen = () => {
         return (
           <View style={styles.stretchCon}>
             <Header />
+          </View>
+        )
+      case 'search':
+        return (
+          <View style={styles.stretchCon}>
+            <SearchBar />
           </View>
         )
       case 'services':
