@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
-import { Platform, View, Text, KeyboardAvoidingView, Alert } from 'react-native'
-import { AntDesign } from '@expo/vector-icons'
+import React, { useState } from 'react';
+import { Platform, View, Text, KeyboardAvoidingView } from 'react-native';
+import { AntDesign } from '@expo/vector-icons';
 
-import styles from './style'
-import { useServiceForm } from '../../utils/hooks'
-import CalendarDropdown from '../CalendarDropdown'
-import Container from '../Container'
-import Divider from '../Divider'
-import Form from '../Form'
-import { RadioOption } from '../Buttons/RadioButton/RadioButton'
-import RadioButtonGroup from '../Buttons/RadioButton/RadioButtonGroup'
+import styles from './style';
+import { useServiceForm } from '../../utils/hooks';
+import CalendarDropdown from '../CalendarDropdown';
+import Container from '../Container';
+import Divider from '../Divider';
+import Form from '../Form';
+import { RadioOption } from '../Buttons/RadioButton/RadioButton';
+import RadioButtonGroup from '../Buttons/RadioButton/RadioButtonGroup';
 
 const BookAService = () => {
   const mobile = Platform.OS !== 'web'

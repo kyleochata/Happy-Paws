@@ -10,6 +10,7 @@ export const homeData = [
 
 export const servicesData = [
   { id: 'header' },
+  { id: 'services' },
   { id: 'special' },
   { id: 'bookAService' },
   { id: 'footer' },
@@ -23,8 +24,7 @@ export const sServiceCardData = [
         type: 'boarding',
         title: 'Standard',
         price: 40,
-        description:
-          'Includes a comforatable sleeping area, basic measls and access to outdoor play areas',
+        description: `Includes a comfortable sleeping area, basic meals, and access to outdoor play areas.`,
       },
       {
         type: 'boarding',
@@ -79,8 +79,7 @@ export const sServiceCardData = [
         type: 'grooming',
         title: 'Premium Grooming',
         price: 75,
-        description:
-          'Includes a full grooming package with bath, brush, nail trim, ear cleaning, and optional add-ons such as teeth brushing or de-shedding treatments.',
+        description: `Includes a premium grooming experience with specialized shampoos and conditioners, breed-specific styling, and extra pamperings such as paw massages or aromatherapy treatments.`,
       },
       {
         type: 'training',
