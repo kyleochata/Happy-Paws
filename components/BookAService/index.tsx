@@ -12,8 +12,8 @@ import { RadioOption } from '../Buttons/RadioButton/RadioButton';
 import RadioButtonGroup from '../Buttons/RadioButton/RadioButtonGroup';
 
 const BookAService = () => {
-  const mobile = Platform.OS !== 'web';
-  const { formData, inputs, handleChange, handleSubmit } = useServiceForm();
+  const mobile = Platform.OS !== 'web'
+  const { formData, inputs, handleChange, handleSubmit } = useServiceForm()
 
   const [selectedPetType, setSelectedPetType] = useState<string>('')
   const petTypeOptions: RadioOption[] = [
