@@ -7,11 +7,15 @@ import BookAService from '../components/BookAService'
 import styles from '../utils/constants'
 import Container from '../components/Container'
 import SpecialAcc from '../components/SpecialAcc'
+import SearchBar from '../components/SearchBar'
+import { useSearchSelector } from '../store/selectors'
+import { useSelector } from 'react-redux'
 
 const ServicesScreen = () => {
   const navigation = useNavigation<any>()
   const data = [
     { id: 'header' },
+    { id: 'search' },
     { id: 'special' },
     { id: 'bookaservice' },
     { id: 'footer' },
@@ -23,6 +27,12 @@ const ServicesScreen = () => {
         return (
           <View style={styles.stretchCon}>
             <Header />
+          </View>
+        )
+      case 'search':
+        return (
+          <View style={styles.stretchCon}>
+            <SearchBar />
           </View>
         )
       case 'special':
@@ -50,6 +60,7 @@ const ServicesScreen = () => {
         return null
     }
   }
+  console.log(useSelector(useSearchSelector))
 
   return (
     <FlatList
