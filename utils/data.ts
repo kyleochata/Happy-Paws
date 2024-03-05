@@ -4,6 +4,7 @@ export const homeData = [
   { id: 'valueBanner' },
   { id: 'about' },
   { id: 'hServices' },
+  { id: 'pgallery' },
   { id: 'contact' },
   { id: 'footer' },
 ]
