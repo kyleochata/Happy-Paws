@@ -256,7 +256,27 @@ const ServiceCard = ({ services }: ServiceCardProps) => {
           </View>
         </View>
       </View>
+
+<View style={mobile ? styles.mobCard : styles.webCard}>
+<Text style={mobile ? styles.mobLabel : styles.webLabel}>
+  Overnight Boarding
+</Text>
+{services.map((service, i) => (
+  <View key={i} style={mobile ? styles.mobServices : styles.webServices}>
+    <Text style={mobile ? styles.mobH3 : styles.webH3}>
+      {service.title}: {'$'}{service.price}{' '}
+      {service.type === 'boarding' ? 'per night' : ''}
+      {service.type === 'daycare' ? 'per day' : ''}
+      {service.type === 'training' ? 'per session' : ''}
+    </Text>
+    <Text style={mobile ? styles.mobDescription : styles.webDescription}>
+      {service.description}
+    </Text>
+  </View>
+))}
     </View>
+    {/* </View> */}
+    </>
   );
 };
 
