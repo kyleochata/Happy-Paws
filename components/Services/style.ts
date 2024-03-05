@@ -104,6 +104,7 @@ const styles = StyleSheet.create({
   },
   webCard: {
     width: '100%',
+    height: '100%',
     backgroundColor: colors.white,
     display: 'flex',
     flexDirection: 'row',
@@ -133,6 +134,10 @@ const styles = StyleSheet.create({
   webServices: {
     width: '100%',
     maxWidth: 598,
+    height: 'auto',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
   },
   webH3: {
     color: colors.black,
@@ -146,6 +151,13 @@ const styles = StyleSheet.create({
     fontFamily: FiraSans,
     marginBottom: 10,
   },
+  imgWrapper: {
+    width: '100%',
+    maxWidth: 600,
+    height: 'auto',
+    display: 'flex',
+    alignItems: 'flex-start',
+  },
   webImage: {
     width: 600,
     height: 438,
@@ -154,7 +166,7 @@ const styles = StyleSheet.create({
     width: '100%',
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'stretch',
     flexGrow: 2,
   },
 });
