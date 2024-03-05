@@ -10,6 +10,7 @@ import styles from '../utils/constants'
 import ValueBanner from '../components/Banner/ValuesBanner/index'
 import About from '../components/About'
 import HServices from '../components/HServices'
+import PGallery from '../components/PhotoGallery'
 import { homeData } from '../utils/data'
 
 const HomeScreen = () => {
@@ -44,6 +45,14 @@ const HomeScreen = () => {
           <View style={styles.stretchCon}>
             <Container>
               <HServices />
+            </Container>
+          </View>
+        )
+      case 'pgallery':
+        return (
+          <View style={styles.stretchCon}>
+            <Container>
+              <PGallery />
             </Container>
           </View>
         )
