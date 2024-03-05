@@ -87,16 +87,22 @@ import { useSearchSelector } from '../../store/selectors'
 
 const SearchBar = () => {
   const [inputValue, setInputValue] = useState('')
+  const [showFModal, setShowFModal] = useState(false)
   const dispatch = useDispatch()
 
   const handleInputChange = (value: string) => {
     setInputValue(value)
   }
 
-  const handleSearchSubmit = async () => {
+  const handleSearchSubmit = async (e: any) => {
+    e.preventDefault()
     console.log({ inputValue })
     dispatch(changeSearch(inputValue))
     setInputValue('')
+  }
+  const handleFModal = (e: any) => {
+    e.preventDefault()
+    setShowFModal(!showFModal)
   }
 
   return (
@@ -134,17 +140,24 @@ const SearchBar = () => {
               alignItems: 'center',
               flexDirection: 'row',
             }}
-            onPress={() => {
-              // Remove console log for "filterbtnpress"
-            }}
+            onPress={handleFModal}
           >
             <Text style={styles.wSBFText}>Filter</Text>
-            <AntDesign
-              name="down"
-              size={24}
-              color="white"
-              style={{ margin: 10 }}
-            />
+            {showFModal ? (
+              <AntDesign
+                name="up"
+                size={24}
+                color="white"
+                style={styles.wOFMArrow}
+              />
+            ) : (
+              <AntDesign
+                name="down"
+                size={24}
+                color="white"
+                style={{ margin: 10 }}
+              />
+            )}
           </TouchableOpacity>
         </View>
       </Container>
