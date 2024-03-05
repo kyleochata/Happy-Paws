@@ -66,6 +66,7 @@ const ServicesScreen = () => {
         return null
     }
   }
+  console.log(useSelector(useSearchSelector))
 
   return (
     <FlatList

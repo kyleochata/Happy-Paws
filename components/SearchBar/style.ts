@@ -62,6 +62,10 @@ const styles = StyleSheet.create({
     fontFamily: 'Montserrat-SemiBold',
     fontWeight: '600',
   },
+  wOFMArrow: {
+    margin: 10,
+    position: 'relative',
+  },
   mSBInput: {
     width: 260,
     height: 40,
